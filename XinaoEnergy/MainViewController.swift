@@ -39,7 +39,7 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
                viewControllers.add(pViewController)
             }
             
-            pViewController.pageText = "第\(index+1)页"
+            pViewController.pageText = "全新第\(index+1)页"
         }
         //展示之前进行初始化第一个Controller, 单个显示放一个,两个显示则放两个,和样式有关
         pageController.setViewControllers([viewControllers.object(at: 0) as! UIViewController], direction: .forward, animated: false) { (b:Bool) -> Void in
