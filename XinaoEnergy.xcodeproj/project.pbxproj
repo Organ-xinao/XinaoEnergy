@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE9A1EB2448D4E532E1746D6 /* Pods_XinaoEnergy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */; };
+		FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA00E2101C96100BAAD9A /* MainViewController.swift */; };
+		FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */; };
+		FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */; };
+		FC2DA0152101CA8A00BAAD9A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */; };
+		FC2DA0192106EEF000BAAD9A /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0182106EEF000BAAD9A /* StationViewController.swift */; };
+		FC2DA01B210706D100BAAD9A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA01A210706D100BAAD9A /* TableViewController.swift */; };
+		FC2DA01D21070B7700BAAD9A /* todoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA01C21070B7700BAAD9A /* todoModel.swift */; };
 		FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */; };
 		FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81C89D20FED8FB00CF8252 /* ViewController.swift */; };
 		FC81C8A120FED8FB00CF8252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC81C89F20FED8FB00CF8252 /* Main.storyboard */; };
 		FC81C8A320FED8FB00CF8252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC81C8A220FED8FB00CF8252 /* Assets.xcassets */; };
 		FC81C8A620FED8FB00CF8252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC81C8A420FED8FB00CF8252 /* LaunchScreen.storyboard */; };
+		FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8CF18721002FB10059CA72 /* FrameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.release.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.release.xcconfig"; sourceTree = "<group>"; };
+		50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.debug.xcconfig"; sourceTree = "<group>"; };
+		BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XinaoEnergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2DA00E2101C96100BAAD9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeViewController.swift; sourceTree = "<group>"; };
+		FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
+		FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		FC2DA0182106EEF000BAAD9A /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		FC2DA01A210706D100BAAD9A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FC2DA01C21070B7700BAAD9A /* todoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoModel.swift; sourceTree = "<group>"; };
 		FC81C89820FED8FB00CF8252 /* XinaoEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XinaoEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC81C89D20FED8FB00CF8252 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,7 @@
 		FC81C8A220FED8FB00CF8252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC81C8A520FED8FB00CF8252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC81C8A720FED8FB00CF8252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8CF18721002FB10059CA72 /* FrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9A1EB2448D4E532E1746D6 /* Pods_XinaoEnergy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19F050945BCF380CF902ACAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CA390A2A00D15F3E6BB4CA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */,
+				2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FC81C88F20FED8FA00CF8252 = {
 			isa = PBXGroup;
 			children = (
 				FC81C89A20FED8FB00CF8252 /* XinaoEnergy */,
 				FC81C89920FED8FB00CF8252 /* Products */,
+				9CA390A2A00D15F3E6BB4CA4 /* Pods */,
+				19F050945BCF380CF902ACAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +100,14 @@
 				FC81C8A220FED8FB00CF8252 /* Assets.xcassets */,
 				FC81C8A420FED8FB00CF8252 /* LaunchScreen.storyboard */,
 				FC81C8A720FED8FB00CF8252 /* Info.plist */,
+				FC8CF18721002FB10059CA72 /* FrameViewController.swift */,
+				FC2DA00E2101C96100BAAD9A /* MainViewController.swift */,
+				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
+				FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */,
+				FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */,
+				FC2DA0182106EEF000BAAD9A /* StationViewController.swift */,
+				FC2DA01A210706D100BAAD9A /* TableViewController.swift */,
+				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -71,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC81C8AA20FED8FB00CF8252 /* Build configuration list for PBXNativeTarget "XinaoEnergy" */;
 			buildPhases = (
+				2C82F13E885C33EE14A4816E /* [CP] Check Pods Manifest.lock */,
 				FC81C89420FED8FB00CF8252 /* Sources */,
 				FC81C89520FED8FB00CF8252 /* Frameworks */,
 				FC81C89620FED8FB00CF8252 /* Resources */,
+				71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */,
+				F8EE43061A664D0242C5789C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +182,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C82F13E885C33EE14A4816E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XinaoEnergy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8EE43061A664D0242C5789C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FC81C89420FED8FB00CF8252 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
+				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */,
 				FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */,
+				FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */,
+				FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */,
+				FC2DA0152101CA8A00BAAD9A /* PersonViewController.swift in Sources */,
+				FC2DA01D21070B7700BAAD9A /* todoModel.swift in Sources */,
+				FC2DA01B210706D100BAAD9A /* TableViewController.swift in Sources */,
+				FC2DA0192106EEF000BAAD9A /* StationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +385,13 @@
 		};
 		FC81C8AB20FED8FB00CF8252 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinao.XinaoEnergy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +402,13 @@
 		};
 		FC81C8AC20FED8FB00CF8252 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinao.XinaoEnergy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
