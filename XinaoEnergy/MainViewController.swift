@@ -48,7 +48,8 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
         //UIPageController必须放在Controller Container中
         self.addChildViewController(pageController)
         self.view.addSubview(pageController.view)
-        
+        //先移除通知
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue:"initToMain"), object: nil)
         // 接收通知
         //object必须为空（否则监听不了），暂时不清楚这个参数的意义
         NotificationCenter.default.addObserver(self, selector: #selector(Myfunc(notification:)), name: NSNotification.Name(rawValue:"initToMain"), object: nil)
