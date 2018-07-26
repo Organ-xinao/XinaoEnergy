@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var maxX:CGFloat?
     var start:CGPoint?
     var move:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
