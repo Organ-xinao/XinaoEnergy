@@ -127,6 +127,7 @@
 				FC81C89520FED8FB00CF8252 /* Frameworks */,
 				FC81C89620FED8FB00CF8252 /* Resources */,
 				71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */,
+				F99521FB36C32F3DA41E1BFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +224,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F99521FB36C32F3DA41E1BFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,6 +270,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		FC81C8A420FED8FB00CF8252 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;

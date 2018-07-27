@@ -12,10 +12,40 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var controllers:[UIViewController] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //MARK - 纯代码编写tabbar起始页
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        //self.window!.backgroundColor = UIColor.white;
+//
+//        let vcArray:[UIViewController] = [MainViewController(), KnowLeadgeViewController(), IdeaViewController(), PersonViewController()]
+//        let titleArray = [("消息", "main"), ("联系人", "idea"), ("新看点", "knowleadge"), ("动态", "person")]
+//        for (index, vc) in vcArray.enumerated() {
+//            //将为选中图片设置为默认图片，这样就不是系统默认的灰色了
+//            var nav = vcArray[index]
+//            if index != 3 {
+//                nav = UINavigationController.init(rootViewController: vc)
+//                // 需要title的情况
+//                nav.title = titleArray[index].0
+//            }
+//
+//            nav.tabBarItem.title = titleArray[index].0
+//            // 不需要title的情况，需要调整image位置
+//            nav.tabBarItem.tag = index
+//            nav.tabBarItem.image = UIImage(named: (titleArray[index].1))?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+//
+//            controllers.append(nav)
+//        }
+//
+//        let mainTabContrainer = FrameViewController()
+//        mainTabContrainer.tabBar.isTranslucent = false
+//        mainTabContrainer.tabBar.tintColor = UIColor.init(red: 53.0/255.0, green: 169.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+//        mainTabContrainer.viewControllers = controllers
+//        self.window?.rootViewController = mainTabContrainer
+//        self.window?.makeKeyAndVisible()
         return true
     }
 

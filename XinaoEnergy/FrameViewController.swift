@@ -27,7 +27,7 @@ class FrameViewController: UITabBarController,UITabBarControllerDelegate {
         let tabbar1Image = UIImage(named: "knowleadge")
         let tabbar2Image = UIImage(named: "idea")
         let tabbar3Image = UIImage(named: "person")
-        
+
         items[0].image = tabbar0Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         items[1].image = tabbar1Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         items[2].image = tabbar2Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)

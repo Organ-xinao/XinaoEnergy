@@ -16,6 +16,8 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
     var viewControllers = NSMutableArray()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.yellow;
+
         // Do any additional setup after loading the view.
         //初始化
         //transitionStyle:转换样式，有pageCurl和scroll两种
@@ -32,12 +34,12 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let pViewController = storyboard.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
 //            let pViewController = StationViewController()
-            if index == 3{
+//            if index == 3{
                let tabViewController = storyboard.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
                 viewControllers.add(tabViewController)
-            }else{
-               viewControllers.add(pViewController)
-            }
+//            }else{
+//               viewControllers.add(pViewController)
+//            }
             
             pViewController.pageText = "全新第\(index+1)页"
         }
