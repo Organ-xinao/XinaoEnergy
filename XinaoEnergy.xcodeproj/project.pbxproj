@@ -130,7 +130,6 @@
 				FC81C89520FED8FB00CF8252 /* Frameworks */,
 				FC81C89620FED8FB00CF8252 /* Resources */,
 				71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */,
-				F99521FB36C32F3DA41E1BFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,30 +215,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F99521FB36C32F3DA41E1BFD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
