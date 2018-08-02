@@ -23,6 +23,12 @@
 		FC81C8A320FED8FB00CF8252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC81C8A220FED8FB00CF8252 /* Assets.xcassets */; };
 		FC81C8A620FED8FB00CF8252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC81C8A420FED8FB00CF8252 /* LaunchScreen.storyboard */; };
 		FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8CF18721002FB10059CA72 /* FrameViewController.swift */; };
+		FCCF02872112F39E00CF9E85 /* LineChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02812112F39D00CF9E85 /* LineChartsViewController.swift */; };
+		FCCF02882112F39E00CF9E85 /* PieChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02822112F39D00CF9E85 /* PieChartsViewController.swift */; };
+		FCCF02892112F39E00CF9E85 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02832112F39D00CF9E85 /* LineButton.swift */; };
+		FCCF028A2112F39E00CF9E85 /* BarChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02842112F39E00CF9E85 /* BarChartsViewController.swift */; };
+		FCCF028B2112F39E00CF9E85 /* PublicParamter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02852112F39E00CF9E85 /* PublicParamter.swift */; };
+		FCCF028C2112F39E00CF9E85 /* ChartsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF02862112F39E00CF9E85 /* ChartsTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		FC81C8A520FED8FB00CF8252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC81C8A720FED8FB00CF8252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC8CF18721002FB10059CA72 /* FrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
+		FCCF02812112F39D00CF9E85 /* LineChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsViewController.swift; sourceTree = "<group>"; };
+		FCCF02822112F39D00CF9E85 /* PieChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartsViewController.swift; sourceTree = "<group>"; };
+		FCCF02832112F39D00CF9E85 /* LineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
+		FCCF02842112F39E00CF9E85 /* BarChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartsViewController.swift; sourceTree = "<group>"; };
+		FCCF02852112F39E00CF9E85 /* PublicParamter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicParamter.swift; sourceTree = "<group>"; };
+		FCCF02862112F39E00CF9E85 /* ChartsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,12 @@
 				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
 				FB2C8C61210960F200E4EA65 /* BaseViewController.swift */,
 				FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */,
+				FCCF02842112F39E00CF9E85 /* BarChartsViewController.swift */,
+				FCCF02862112F39E00CF9E85 /* ChartsTabViewController.swift */,
+				FCCF02832112F39D00CF9E85 /* LineButton.swift */,
+				FCCF02812112F39D00CF9E85 /* LineChartsViewController.swift */,
+				FCCF02822112F39D00CF9E85 /* PieChartsViewController.swift */,
+				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -130,6 +148,7 @@
 				FC81C89520FED8FB00CF8252 /* Frameworks */,
 				FC81C89620FED8FB00CF8252 /* Resources */,
 				71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */,
+				06D130A1532C8D1778439AF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +207,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06D130A1532C8D1778439AF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2C82F13E885C33EE14A4816E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,12 +248,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -235,6 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCF02872112F39E00CF9E85 /* LineChartsViewController.swift in Sources */,
+				FCCF02882112F39E00CF9E85 /* PieChartsViewController.swift in Sources */,
+				FCCF02892112F39E00CF9E85 /* LineButton.swift in Sources */,
+				FCCF028A2112F39E00CF9E85 /* BarChartsViewController.swift in Sources */,
+				FCCF028B2112F39E00CF9E85 /* PublicParamter.swift in Sources */,
+				FCCF028C2112F39E00CF9E85 /* ChartsTabViewController.swift in Sources */,
 				FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */,
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,

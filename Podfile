@@ -8,6 +8,7 @@ target 'XinaoEnergy' do
 
   # Pods for XinaoEnergy
   pod 'Alamofire', '~>4.7.2'
+  pod 'Charts', '~> 3.1.1'
   pod 'Neon', '~> 0.4.0'
   pod 'SwiftyJSON', '~> 3.1.3'
 end
