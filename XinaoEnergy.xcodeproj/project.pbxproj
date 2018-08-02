@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE9A1EB2448D4E532E1746D6 /* Pods_XinaoEnergy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */; };
 		FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2C8C61210960F200E4EA65 /* BaseViewController.swift */; };
+		FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */; };
 		FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA00E2101C96100BAAD9A /* MainViewController.swift */; };
 		FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */; };
 		FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */; };
@@ -29,6 +30,7 @@
 		50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XinaoEnergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2C8C61210960F200E4EA65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC2DA00E2101C96100BAAD9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeViewController.swift; sourceTree = "<group>"; };
 		FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				FC2DA01A210706D100BAAD9A /* TableViewController.swift */,
 				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
 				FB2C8C61210960F200E4EA65 /* BaseViewController.swift */,
+				FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */,
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */,
