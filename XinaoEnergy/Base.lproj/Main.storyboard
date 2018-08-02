@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1UP-47-FCV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8M-BL-6jE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,10 +110,25 @@
             </objects>
             <point key="canvasLocation" x="3055.1999999999998" y="-600.44977511244383"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="LeQ-cO-Bwr">
+            <objects>
+                <viewController id="F8M-BL-6jE" customClass="LoginViewController" customModule="XinaoEnergy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q02-Ld-0NF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="T8G-sc-zbc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUf-3k-9gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1367" y="76"/>
+        </scene>
         <!--Frame View Controller-->
         <scene sceneID="zNG-zb-6wG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1UP-47-FCV" customClass="FrameViewController" customModule="XinaoEnergy" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainStoryboardViewController" automaticallyAdjustsScrollViewInsets="NO" id="1UP-47-FCV" customClass="FrameViewController" customModule="XinaoEnergy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nEC-Fr-JY3">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

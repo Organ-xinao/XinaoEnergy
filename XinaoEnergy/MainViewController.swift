@@ -141,7 +141,7 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
     
     @IBAction func openTabPage(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let ChartsTabViewController = storyboard.instantiateViewController(withIdentifier: "ChartsTabViewController") as! ChartsTabViewController
+        let ChartsTabViewController = storyboard.instantiateViewController(withIdentifier: "mainStoryboardViewController") as! FrameViewController
         ChartsTabViewController.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(ChartsTabViewController, animated: false)
     }
