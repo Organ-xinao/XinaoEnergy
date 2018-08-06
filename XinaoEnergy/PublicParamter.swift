@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+//页面高度
 let kScreenHeight = UIScreen.main.bounds.size.height
-
+//页面宽度
 let kScreenWidth = UIScreen.main.bounds.size.width
+//navigationbar的高度
+let KMaskHeight = 64

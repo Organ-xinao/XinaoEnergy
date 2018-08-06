@@ -17,6 +17,7 @@
 		FC2DA0192106EEF000BAAD9A /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0182106EEF000BAAD9A /* StationViewController.swift */; };
 		FC2DA01B210706D100BAAD9A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA01A210706D100BAAD9A /* TableViewController.swift */; };
 		FC2DA01D21070B7700BAAD9A /* todoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA01C21070B7700BAAD9A /* todoModel.swift */; };
+		FC59B552211451980056578C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59B551211451980056578C /* PageViewController.swift */; };
 		FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */; };
 		FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81C89D20FED8FB00CF8252 /* ViewController.swift */; };
 		FC81C8A120FED8FB00CF8252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC81C89F20FED8FB00CF8252 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		FC2DA0182106EEF000BAAD9A /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		FC2DA01A210706D100BAAD9A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FC2DA01C21070B7700BAAD9A /* todoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoModel.swift; sourceTree = "<group>"; };
+		FC59B551211451980056578C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FC81C89820FED8FB00CF8252 /* XinaoEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XinaoEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC81C89D20FED8FB00CF8252 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				FCCF02812112F39D00CF9E85 /* LineChartsViewController.swift */,
 				FCCF02822112F39D00CF9E85 /* PieChartsViewController.swift */,
 				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
+				FC59B551211451980056578C /* PageViewController.swift */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -148,7 +151,6 @@
 				FC81C89520FED8FB00CF8252 /* Frameworks */,
 				FC81C89620FED8FB00CF8252 /* Resources */,
 				71256882AAF3BCE0E1107E01 /* [CP] Embed Pods Frameworks */,
-				06D130A1532C8D1778439AF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,7 +168,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = jun;
 				TargetAttributes = {
 					FC81C89720FED8FB00CF8252 = {
@@ -207,21 +209,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06D130A1532C8D1778439AF2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2C82F13E885C33EE14A4816E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +272,7 @@
 				FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */,
 				FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */,
 				FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */,
+				FC59B552211451980056578C /* PageViewController.swift in Sources */,
 				FC2DA0152101CA8A00BAAD9A /* PersonViewController.swift in Sources */,
 				FC2DA01D21070B7700BAAD9A /* todoModel.swift in Sources */,
 				FC2DA01B210706D100BAAD9A /* TableViewController.swift in Sources */,
@@ -329,6 +317,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -336,6 +325,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -386,6 +376,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -393,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

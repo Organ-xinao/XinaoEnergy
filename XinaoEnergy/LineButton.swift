@@ -12,6 +12,10 @@ class LineButton: NSObject {
     
     // button数组
     var buttonArr:NSMutableArray = []
+    
+    //声明协议
+    weak open var delegate: LineButtonDelagate?
+    
     // 创建view方法
     func creatLineButton(dataArr:NSMutableArray) ->UIView {
         // 最底层容器view
@@ -30,7 +34,11 @@ class LineButton: NSObject {
             tabBtn.setTitleColor(UIColor.white, for: UIControlState.selected)
             tabBtn.layer.borderWidth=1
             tabBtn.layer.cornerRadius = 20
-            
+            if index == 0 {
+                tabBtn.isSelected = true
+                tabBtn.backgroundColor = UIColor.init(red: 37/255, green: 44/255, blue: 61/255, alpha: 1)
+            }
+            tabBtn.tag = index
             // 同一个点击方法 根据传值和数组区分
             tabBtn.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
             // 添加到view上
@@ -46,12 +54,22 @@ class LineButton: NSObject {
         for b in buttonArr{
             // 遍历按钮数组,如果相同就改成选中状态,不相同就取消选中状态
             if (b as! UIButton) == button{
+                print("index+\(button.tag)")
+                if (self.delegate?.responds(to: #selector(LineButtonDelagate.clickChangePage(_:buttonIndex:))))!{
+                    self.delegate?.clickChangePage(self, buttonIndex: button.tag)
+                }
                 (b as! UIButton).isSelected = true
                 (b as! UIButton).backgroundColor = UIColor.init(red: 37/255, green: 44/255, blue: 61/255, alpha: 1)
+                
             }else{
                 (b as! UIButton).isSelected = false
                 (b as! UIButton).backgroundColor = UIColor.black
             }
         }
     }
+    
+}
+//协议的实现
+@objc protocol  LineButtonDelagate : NSObjectProtocol{
+    @objc func clickChangePage(_ lineButton:LineButton, buttonIndex:NSInteger)
 }
