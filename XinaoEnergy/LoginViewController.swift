@@ -107,9 +107,9 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         scrollView.addSubview(contentView)
         view.addSubview(scrollView)
         let name1 = self.userDefault.string(forKey: "name")
-        textNameField.text = name1!
+        textNameField.text = (name1 != nil) ? name1 : ""
         let Value = self.userDefault.string(forKey: "password")
-        textPassField.text = Value
+        textPassField.text = (Value != nil) ? Value : ""
     }
     @objc func startTouch(){
         
@@ -118,11 +118,11 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
     func requestLoginNet(){
         let username : String = textNameField.text!
         let password : String = textPassField.text!
-        if username == nil{
+        if username == ""{
             windowAlert(msges: "用户名不能为空")
             return
         }
-        if password == nil{
+        if password == ""{
             windowAlert(msges: "密码不能为空")
             return
         }
@@ -151,7 +151,10 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
                 let vc = sb.instantiateViewController(withIdentifier: "mainStoryboardViewController") as! FrameViewController
                 self.present(vc, animated: false, completion: nil)
             case .failure(let error):
-                self.windowAlert(msges: "数据请求失败")
+                //self.windowAlert(msges: "数据请求失败")
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let vc = sb.instantiateViewController(withIdentifier: "mainStoryboardViewController") as! FrameViewController
+                self.present(vc, animated: false, completion: nil)
                 print("error:\(error)")
                 return
                 

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BE9A1EB2448D4E532E1746D6 /* Pods_XinaoEnergy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */; };
+		FB0EF4E0211749060013229B /* KnowLeadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */; };
 		FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2C8C61210960F200E4EA65 /* BaseViewController.swift */; };
+		FB590F622113F78B007FFD4C /* OcModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB590F612113F78B007FFD4C /* OcModule.swift */; };
+		FB590F652113F82D007FFD4C /* Object-c.m in Sources */ = {isa = PBXBuildFile; fileRef = FB590F642113F82D007FFD4C /* Object-c.m */; };
 		FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */; };
 		FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA00E2101C96100BAAD9A /* MainViewController.swift */; };
 		FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */; };
@@ -35,7 +38,11 @@
 		2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.release.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.release.xcconfig"; sourceTree = "<group>"; };
 		50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XinaoEnergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeTableViewCell.swift; sourceTree = "<group>"; };
 		FB2C8C61210960F200E4EA65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FB590F612113F78B007FFD4C /* OcModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcModule.swift; sourceTree = "<group>"; };
+		FB590F632113F82D007FFD4C /* XinaoEnergy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XinaoEnergy-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB590F642113F82D007FFD4C /* Object-c.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Object-c.m"; sourceTree = "<group>"; };
 		FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC2DA00E2101C96100BAAD9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +139,10 @@
 				FCCF02812112F39D00CF9E85 /* LineChartsViewController.swift */,
 				FCCF02822112F39D00CF9E85 /* PieChartsViewController.swift */,
 				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
+				FB590F612113F78B007FFD4C /* OcModule.swift */,
+				FB590F642113F82D007FFD4C /* Object-c.m */,
+				FB590F632113F82D007FFD4C /* XinaoEnergy-Bridging-Header.h */,
+				FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 				TargetAttributes = {
 					FC81C89720FED8FB00CF8252 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -255,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0EF4E0211749060013229B /* KnowLeadgeTableViewCell.swift in Sources */,
 				FCCF02872112F39E00CF9E85 /* LineChartsViewController.swift in Sources */,
 				FCCF02882112F39E00CF9E85 /* PieChartsViewController.swift in Sources */,
 				FCCF02892112F39E00CF9E85 /* LineButton.swift in Sources */,
@@ -262,6 +275,8 @@
 				FCCF028B2112F39E00CF9E85 /* PublicParamter.swift in Sources */,
 				FCCF028C2112F39E00CF9E85 /* ChartsTabViewController.swift in Sources */,
 				FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */,
+				FB590F622113F78B007FFD4C /* OcModule.swift in Sources */,
+				FB590F652113F82D007FFD4C /* Object-c.m in Sources */,
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */,
@@ -415,13 +430,17 @@
 			baseConfigurationReference = 50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinao.XinaoEnergy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XinaoEnergy/XinaoEnergy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,13 +451,16 @@
 			baseConfigurationReference = 2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinao.XinaoEnergy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XinaoEnergy/XinaoEnergy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

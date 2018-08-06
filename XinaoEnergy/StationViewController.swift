@@ -212,8 +212,7 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         contentLabel1.font = UIFont.boldSystemFont(ofSize: 18)
         contentView.addSubview(contentLabel1)
         contentLabel1.font = UIFont.boldSystemFont(ofSize: 14)
-        var options : [Int : [String:String]]
-        options = [1:["leftName":"发电总功率","image":"Group 3 Copy1","setFontSize":"18","fontSize":"14","textAlignment":"center","RightName":"425.09 kW","x":"5","y":"20"],
+        let options : [Int : [String:String]] = [1:["leftName":"发电总功率","image":"Group 3 Copy1","setFontSize":"18","fontSize":"14","textAlignment":"center","RightName":"425.09 kW","x":"5","y":"20"],
                    2:["leftName":"产蒸汽流量","image":"产蒸汽 copy","setFontSize":"18","fontSize":"14","textAlignment":"center","RightName":"5.01 t/h","x":String(Int(contentView.frame.size.width/2)+2),"y":"20"],3:["leftName":"制热功率","image":"产热 copy","setFontSize":"18","fontSize":"14","textAlignment":"center","RightName":"0.00 kW","x":"5","y":"75"],4:["leftName":"制冷功率","image":"产冷 copy","setFontSize":"18","fontSize":"14","textAlignment":"center","RightName":"567.0 kW","x":String(Int(contentView.frame.size.width/2)+2),"y":"75"]]
         setContentView(options:options)
         //MARK:今日供能
