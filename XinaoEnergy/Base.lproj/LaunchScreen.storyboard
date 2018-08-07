@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是欢迎界面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-Kd-VIZ">
-                                <rect key="frame" x="5" y="25" width="365" height="637"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="启动页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-XF-eDh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.76372318289999996" green="0.46955136159999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Djw-Kd-VIZ" secondAttribute="bottom" constant="5" id="2AH-0O-DNN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Djw-Kd-VIZ" secondAttribute="trailing" constant="5" id="3C8-P9-HEU"/>
-                            <constraint firstItem="Djw-Kd-VIZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="F3I-4s-gus"/>
-                            <constraint firstItem="Djw-Kd-VIZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="jEk-8n-zKh"/>
+                            <constraint firstItem="HqQ-XF-eDh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0f4-Zc-vLe"/>
+                            <constraint firstItem="HqQ-XF-eDh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9B6-Wk-Mw2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HqQ-XF-eDh" secondAttribute="trailing" id="LuB-9g-MwZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HqQ-XF-eDh" secondAttribute="bottom" id="aC0-fs-gkL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
