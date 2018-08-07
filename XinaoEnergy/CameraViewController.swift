@@ -8,7 +8,11 @@
 
 import UIKit
 
-class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+import AVFoundation
+import Photos
+
+
+class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCapturePhotoCaptureDelegate {
     var cameraView = CameraView()
     
     override func viewDidLoad() {
@@ -22,15 +26,25 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     }
     
     @objc func cameraEvent(){
-        let pickerCamera = UIImagePickerController()
-        pickerCamera.delegate = self
-        self.present(pickerCamera,animated:true,completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+        //创建图片控制器
+        let picker = UIImagePickerController()
+        //设置代理
+        picker.delegate = self
+        //设置来源
+        picker.sourceType = UIImagePickerControllerSourceType.camera
+        //允许编辑
+        picker.allowsEditing = true
+        self.present(picker,animated:true,completion: nil)
+        }else{
+            print("找不到相机")
+        }
+        
     }
     @objc func photoEvent(){
-        let pickerPhoto = UIImagePickerController()
-        pickerPhoto.sourceType = .camera
-        pickerPhoto.delegate = self
-        self.present(pickerPhoto,animated:true,completion:nil)
+        let pickerPhotos = UIImagePickerController()
+        pickerPhotos.delegate = self
+        self.present(pickerPhotos, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker:UIImagePickerController,didFinishPickingMediaWithInfo info:[String:Any]){

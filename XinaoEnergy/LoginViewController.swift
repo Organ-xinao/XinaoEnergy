@@ -167,7 +167,11 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
             "Accept": "application/json"
         ]
         let contentData : [String : Any] = ["method":"login","info":["username":username,"password":password]]
-        Alamofire.request(urlStr, method: .post, parameters: contentData, encoding: JSONEncoding.default, headers: headers).responseJSON { (resultData) in
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10
+        
+        let sessionManager = Alamofire.SessionManager(configuration: configuration)
+        sessionManager.request(urlStr, method: .post, parameters: contentData, encoding: JSONEncoding.default, headers: headers).responseJSON { (resultData) in
             
             switch resultData.result {
             case .success(let value):

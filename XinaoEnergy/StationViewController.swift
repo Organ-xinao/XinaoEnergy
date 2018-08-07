@@ -352,6 +352,7 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         
         //MARK:添加按钮
         cameraButtonMethods()
+        QrCode()
         containerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 510)
         scrollView.contentSize = CGSize(width: view.frame.width, height: 510)
         print(view.frame.height)
@@ -361,15 +362,28 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
     func cameraButtonMethods(){
         var cameraButton = UIButton()
         cameraButton = UIButton(type: UIButtonType.custom)
-        cameraButton.frame = CGRect(x: 20, y: 470, width: 100, height: 40)
+        cameraButton.frame = CGRect(x: 20, y: 480, width: 100, height: 40)
         cameraButton.setTitle("去调用相机", for: UIControlState.normal)
         cameraButton.backgroundColor = UIColor.blue
         cameraButton.addTarget(self, action: #selector(btnEvent), for: .touchUpInside)
         containerView.addSubview(cameraButton)
     }
+    func QrCode(){
+        var cameraButton = UIButton()
+        cameraButton = UIButton(type: UIButtonType.custom)
+        cameraButton.frame = CGRect(x: 140, y: 480, width: 100, height: 40)
+        cameraButton.setTitle("扫一扫", for: UIControlState.normal)
+        cameraButton.backgroundColor = UIColor.blue
+        cameraButton.addTarget(self, action: #selector(btnEventQr), for: .touchUpInside)
+        containerView.addSubview(cameraButton)
+    }
     
     @objc func btnEvent(){
         self.navigationController?.pushViewController(CameraViewController(), animated: false)
+    }
+    
+    @objc func btnEventQr(){
+        self.navigationController?.pushViewController(QrCodeViewController(), animated: false)
     }
     // MARK:设置实时供能动态生成的模块
     func setContentView(options : [Int:[String:String]]){
