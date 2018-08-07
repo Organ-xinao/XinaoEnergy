@@ -151,8 +151,9 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
     
     @IBAction func openTabPage(_ sender: Any) {
         let chartsViewController = ChartsTabViewController()
-        chartsViewController.hidesBottomBarWhenPushed = true;
+        self.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(chartsViewController, animated: false)
+        self.hidesBottomBarWhenPushed = false
     }
     //    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
 //        return currentPage
@@ -174,7 +175,8 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
         leftView = UIScrollView(frame: make)
         leftView?.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.89)
         topView?.addSubview(leftView!)
-        self.tabBarController?.view.addSubview(topView!)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.addSubview(topView!)
         
         minX = topView?.center.x//滑动view中心点 -->隐藏时中心点
         maxX = minX! + topMake.width//彻底展示时的中心点 -->显示时的中心点
