@@ -10,32 +10,53 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class LoginViewController: UIViewController,UIScrollViewDelegate {
+class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDelegate {
     
     var scrollView : UIScrollView = UIScrollView()
     var textPassField : UITextField = UITextField()
     var textNameField : UITextField = UITextField()
+    let contentView = UIView()
     //本地存储
     var userDefault = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textNameField.delegate = self
+        textPassField.delegate = self
         scrollView.delegate = self
         setLayoutFrame()
         // Do any additional setup after loading the view.
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//    }
+    
+//    @objc func keyboardWillShow(notification:NSNotification){
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//        let width = self.view.frame.size.width
+//        let height = self.view.frame.size.height
+//        let rect = CGRect(x: 0, y: -156, width: width, height: height)
+//        self.view.frame = rect
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification:NSNotification){
+//        let width = self.view.frame.size.width
+//        let height = self.view.frame.size.height
+//        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+//        self.view.frame = rect
+//    }
     func setLayoutFrame(){
         
-        let contentView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        )
+        
         contentView.backgroundColor = UIColor.white
         
         let logoView = UIImageView(image: UIImage(named: "Group 13"))
-        logoView.frame = CGRect(x: view.frame.width/2-20, y: contentView.frame.height*2/5-50, width: 40, height: 50)
+        logoView.frame = CGRect(x: view.frame.width/2-20, y: UIScreen.main.bounds.height*2/5-50, width: 40, height: 50)
         contentView.addSubview(logoView)
         
-        let inputView = UIView(frame: CGRect(x: 15, y: view.frame.height*2/5+20, width: view.frame.width-30, height: 80))
+        let inputView = UIView(frame: CGRect(x: 15, y: UIScreen.main.bounds.height*2/5+20, width: view.frame.width-30, height: 80))
         let inputNameView = UIView(frame: CGRect(x: 0, y: 0, width: inputView.frame.width, height: 40))
         let inputNameImageView = UIImageView(image: UIImage(named: "用户名 copy"))
         inputNameImageView.frame = CGRect(x: 0, y: 10, width: 20, height: 20)
@@ -50,9 +71,10 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         textNameField.clearButtonMode = .whileEditing  //编辑时出现清除按钮
         //textField.clearButtonMode = .unlessEditing  //编辑时不出现，编辑后才出现清除按钮
         //textNameField.clearButtonMode = .always  //一直显示清除按钮
-        textNameField.keyboardType = UIKeyboardType.asciiCapable
-        textNameField.becomeFirstResponder()
+        textNameField.keyboardType = UIKeyboardType.default
+        //textNameField.becomeFirstResponder()
         textNameField.font = UIFont.boldSystemFont(ofSize: 14)
+        textNameField.returnKeyType = UIReturnKeyType.next
         textNameField.placeholder = "用户名"
         textNameField.text = ""
         
@@ -78,8 +100,8 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         textPassField.clearButtonMode = .whileEditing  //编辑时出现清除按钮
         //textField.clearButtonMode = .unlessEditing  //编辑时不出现，编辑后才出现清除按钮
         //textPassField.clearButtonMode = .always  //一直显示清除按钮
-        textPassField.keyboardType = UIKeyboardType.asciiCapable
-        textPassField.becomeFirstResponder()
+        textPassField.keyboardType = UIKeyboardType.default
+        textPassField.returnKeyType = UIReturnKeyType.done //表示完成输入
         textPassField.font = UIFont.boldSystemFont(ofSize: 14)
         textPassField.placeholder = "密码"
         textPassField.text = ""
@@ -92,7 +114,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         inputView.addSubview(inputPassView)
         contentView.addSubview(inputView)
         
-        let buttonView = UIButton(frame: CGRect(x: 20, y: view.frame.height*2/5+120, width: view.frame.width-40, height: 40))
+        let buttonView = UIButton(frame: CGRect(x: 20, y: UIScreen.main.bounds.height*2/5+120, width: view.frame.width-40, height: 40))
         buttonView.setTitle("登录", for: UIControlState.normal)
         buttonView.setTitle("登录", for: UIControlState.highlighted)
         buttonView.setTitleColor(UIColor.white,for: .normal) //普通状态下文字的颜色
@@ -101,7 +123,9 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         buttonView.layer.backgroundColor = UIColor(red: 31/255, green: 65/255, blue: 172/255, alpha: 1).cgColor
         buttonView.addTarget(self, action: #selector(LoginViewController.startTouch), for: UIControlEvents.touchUpInside)
         contentView.addSubview(buttonView)
-        scrollView.contentSize = CGSize(width: contentView.frame.width, height: contentView.frame.height)
+        //MARK:设置内容页大小
+        contentView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: UIScreen.main.bounds.height*2/5+160)
+        scrollView.contentSize = CGSize(width: contentView.frame.width, height: UIScreen.main.bounds.height*2/5+160)
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: contentView.frame.height)
         scrollView.backgroundColor = UIColor.white
         scrollView.addSubview(contentView)
@@ -111,6 +135,16 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         let Value = self.userDefault.string(forKey: "password")
         textPassField.text = (Value != nil) ? Value : ""
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //收起键盘
+        textField.resignFirstResponder()
+        print("123")
+        //打印出文本框中的值
+        print(textField.text as Any)
+        return true;
+    }
+    
     @objc func startTouch(){
         
         requestLoginNet()
@@ -152,6 +186,8 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
                 self.present(vc, animated: false, completion: nil)
             case .failure(let error):
                 //self.windowAlert(msges: "数据请求失败")
+                self.userDefault.set(username, forKey: "name")
+                self.userDefault.set(password,forKey:"password")
                 let sb = UIStoryboard(name: "Main", bundle:nil)
                 let vc = sb.instantiateViewController(withIdentifier: "mainStoryboardViewController") as! FrameViewController
                 self.present(vc, animated: false, completion: nil)

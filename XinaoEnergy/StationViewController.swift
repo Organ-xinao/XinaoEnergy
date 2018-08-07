@@ -50,8 +50,7 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         //var screenFrame = UIScreen.main.bounds
         //        let screenWidth = screenFrame.size.width
         //        let screenHeight = screenFrame.size.height
-        scrollView.frame = CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)!+UIApplication.shared.statusBarFrame.height, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height+10)
+        scrollView.frame = CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)!+UIApplication.shared.statusBarFrame.height, width: view.frame.width, height: UIScreen.main.bounds.height - (navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.height - (tabBarController?.tabBar.frame.height)!)
         scrollView.backgroundColor = UIColor.black
         //MARK:点击状态栏返回到顶部
         scrollView.scrollsToTop = true
@@ -62,12 +61,10 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         
         contentHeader = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 120))
         containerView.addSubview(contentHeader)
-        containerView.fillSuperview()
         contentHeader.backgroundColor = UIColor(patternImage: UIImage(named: "Group 8")!)
         
         self.view.addSubview(scrollView)
-        print(view.frame.height)
-        print(scrollView.frame.height)
+
         //        let floatViewOfRight = UIView(frame: CGRect(x: 0, y: 25, width: contentRightView.frame.size.width, height: 50))
         //
         //        contentRightView.addSubview(floatViewOfRight)
@@ -353,10 +350,27 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         consumptionContent.addSubview(consumptionContentLabelViewVal2)
         consumptionContentLabelViewVal2.font = UIFont.boldSystemFont(ofSize: 14)
         
-        
+        //MARK:添加按钮
+        cameraButtonMethods()
+        containerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 510)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 510)
+        print(view.frame.height)
+        print(scrollView.frame.height)
         
     }
+    func cameraButtonMethods(){
+        var cameraButton = UIButton()
+        cameraButton = UIButton(type: UIButtonType.custom)
+        cameraButton.frame = CGRect(x: 20, y: 470, width: 100, height: 40)
+        cameraButton.setTitle("去调用相机", for: UIControlState.normal)
+        cameraButton.backgroundColor = UIColor.blue
+        cameraButton.addTarget(self, action: #selector(btnEvent), for: .touchUpInside)
+        containerView.addSubview(cameraButton)
+    }
     
+    @objc func btnEvent(){
+        self.navigationController?.pushViewController(CameraViewController(), animated: false)
+    }
     // MARK:设置实时供能动态生成的模块
     func setContentView(options : [Int:[String:String]]){
         for (i,value) in options{
