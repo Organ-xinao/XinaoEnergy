@@ -351,8 +351,8 @@ class StationViewController: BaseViewController,UIScrollViewDelegate {
         consumptionContentLabelViewVal2.font = UIFont.boldSystemFont(ofSize: 14)
         
         //MARK:添加按钮
-        cameraButtonMethods()
-        QrCode()
+//        cameraButtonMethods()
+//        QrCode()
         containerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 510)
         scrollView.contentSize = CGSize(width: view.frame.width, height: 510)
         print(view.frame.height)
