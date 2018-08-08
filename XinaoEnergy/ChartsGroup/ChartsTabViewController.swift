@@ -34,7 +34,9 @@ class ChartsTabViewController: UIViewController, UIPageViewControllerDelegate, U
         pageController = UIPageViewController.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [UIPageViewControllerOptionSpineLocationKey:NSNumber(value: 3)])
         pageController.view.frame = CGRect(x:0, y:124, width:kScreenWidth, height:kScreenHeight-124)
         pageController.delegate=self
-        pageController.dataSource = self
+        
+        //当改为self的时候，打开手势滑动
+        pageController.dataSource = nil
         
         //初始化要展示的Controller,自定义
         viewControllers = [LineChartsViewController(), BarChartsViewController(),PieChartsViewController()]
