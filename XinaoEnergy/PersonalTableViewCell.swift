@@ -30,10 +30,12 @@ class PersonalTableViewCell: UITableViewCell {
         itemImage?.layer.cornerRadius = (itemImage?.frame.width)! / 2
         // image还需要加上这一句, 不然无效
         itemImage?.layer.masksToBounds = true
+        itemImage?.contentMode = UIViewContentMode.center
         self.addSubview(itemImage!)
         
         itemTitle = UILabel.init(frame: CGRect(x: 50, y: 10, width: 200, height: 30))
         itemTitle?.textColor = UIColor.black
+        itemTitle?.font = UIFont.systemFont(ofSize: 15)
         self.addSubview(itemTitle!)
         
         itemRightIcon = UIImageView.init(frame: CGRect(x: kScreenWidth-40, y: 15, width: 10, height: 20))
@@ -53,10 +55,18 @@ class PersonalTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
-
+        //仿写cell点击效果，但是不会影响子view的颜色
+        UIView.animate(withDuration: 0.3) {
+            if selected {
+                self.contentView.backgroundColor = UIColor.init(white: 0.85, alpha: 1)
+            }else{
+                self.contentView.backgroundColor = UIColor.white
+            }
+        }
         // Configure the view for the selected state
     }
     
