@@ -471,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -494,6 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
