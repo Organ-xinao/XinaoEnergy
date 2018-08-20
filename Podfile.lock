@@ -3,12 +3,14 @@ PODS:
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
+  - CocoaAsyncSocket (7.6.3)
   - Neon (0.4.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - Charts (~> 3.1.1)
+  - CocoaAsyncSocket
   - Neon (~> 0.4.0)
   - SwiftyJSON (~> 3.1.3)
 
@@ -16,15 +18,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Charts
+    - CocoaAsyncSocket
     - Neon
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 742b618422633f11655078207ca7c3295a9d13a3
+PODFILE CHECKSUM: 1a415b91f5b89db5b6a485bc6a375ca312d09f21
 
 COCOAPODS: 1.5.3

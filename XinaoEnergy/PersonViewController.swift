@@ -10,6 +10,7 @@ import UIKit
 
 class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var headerView:UIView!
     var personalTable:UITableView!
     var tableCellModels :[NSArray] = NSMutableArray() as! [NSArray]
     
@@ -17,13 +18,57 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        creteHeaderView()
         createTableView()
     }
     
+    func creteHeaderView(){
+        headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 180))
+        //会拉伸图片覆盖
+        let image = UIImage(imageLiteralResourceName: "Background")
+        headerView.layer.contents = image.cgImage
+        
+        //由于图片较小，覆盖时有问题
+//        headerView.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+//        headerView.contentMode = .scaleAspectFill
+//        headerView.autoresizingMask = .flexibleWidth
+//        headerView.clipsToBounds = true
+        
+        let headerImageView:UIImageView!
+        headerImageView = UIImageView.init(frame: CGRect(x: self.view.frame.size.width * 0.5 - 70*0.5, y: 30, width: 70, height: 70))
+//        headerImageView.center.x = self.view.center.x
+//        headerImageView.center.y = 75
+//        headerImageView.frame.size = CGSize(width: 50, height: 50)
+        // 圆角指定为长度一半
+        headerImageView?.layer.cornerRadius = (headerImageView?.frame.width)! / 2
+        // image还需要加上这一句, 不然无效
+        headerImageView?.layer.masksToBounds = true
+        headerImageView.image = UIImage(named: "Group 17 Copy")
+        headerView.addSubview(headerImageView)
+        
+        let personName:UILabel = UILabel.init(frame: CGRect(x: 0, y: 115, width: kScreenWidth, height: 20))
+        personName.center.x = headerView.center.x
+        personName.textColor = UIColor.white
+        personName.textAlignment = .center
+        personName.font = UIFont.systemFont(ofSize: 16)
+        personName.text = "admin"
+//        personName.adjustsFontSizeToFitWidth = true
+        headerView.addSubview(personName)
+        
+        let personPosition:UILabel = UILabel.init(frame: CGRect(x: 0, y: 140, width: kScreenWidth, height: 20))
+        personPosition.center.x = headerView.center.x
+        personPosition.textColor = UIColor.white
+        personPosition.textAlignment = .center
+        personPosition.font = UIFont.systemFont(ofSize: 14)
+        personPosition.text = "开发工程师"
+        //        personName.adjustsFontSizeToFitWidth = true
+        headerView.addSubview(personPosition)
+        
+        self.view.addSubview(headerView)
+    }
+    
     func createTableView () {
-        personalTable = UITableView.init(frame: CGRect(x: 0, y: 200, width: kScreenWidth, height: kScreenHeight-200), style: UITableViewStyle.grouped)
-        //去除表格上放多余的空隙
-//        personalTable?.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
+        personalTable = UITableView.init(frame: CGRect(x: 0, y: 180, width: kScreenWidth, height: kScreenHeight-180), style: UITableViewStyle.grouped)
         
         personalTable.delegate = self
         personalTable.dataSource = self
