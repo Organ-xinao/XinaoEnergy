@@ -9,32 +9,36 @@
 import UIKit
 import WebKit
 
-class HelpDocumentViewController: UIViewController,WKNavigationDelegate, WKUIDelegate {
-    
-    private var myWKWebView = WKWebView()
+class HelpDocumentViewController: AddNavViewController,WKNavigationDelegate, WKUIDelegate {
+    //直接声明
+//    private var myWKWebView = WKWebView()
     private var progressView = UIProgressView()
     var open_url:String = "https://www.baidu.com"
+    //懒加载wkWebView
+    /*
+     近期项目在使用WKWebView替代UIWebView，发现WKWebView竟然不能通过xib拖拽创建，只能通过手写代码实现。
+     手写代码麻烦之处在于创建一个对象时需要设置很多关联属性，比如创建WKWebView对象，需要赋值navigationDelegate、布局frame，以及其他的相关属性，
+     在未来的某个时期可能会增加更多的关联属性的设置，这样在-viewDidLoad中代码会越来越多，
+     使用懒加载无疑可以将创建对象、设置对象属性的操作内聚于懒加载内部，减少-viewDidLoad中的代码量和复杂度，代码更具有可读性。
+     */
+//    lazy var wkWebView: WKWebView = {
+//        () -> WKWebView in
+//        let tempWebView = WKWebView()
+//        tempWebView.navigationDelegate = self
+//        return tempWebView
+//    }()
+    //进一步简化后的懒加载
+    lazy var myWKWebView: WKWebView = {
+        let tempWebView = WKWebView()
+        tempWebView.navigationDelegate = self
+        tempWebView.uiDelegate = self
+        return tempWebView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "帮助文档"
-        //action后的方法名如果加“：”则方法里面需要传button；如果没有“：”，则空着即可
-        //只有文字
-//        let item = UIBarButtonItem(title: "done", style: UIBarButtonItemStyle.done, target: self, action: #selector(HelpDocumentViewController.backToparent))
-//        self.navigationItem.leftBarButtonItem = item
-        
-        //设置只有图片显示
-        let leftBarBtn = UIBarButtonItem(title: "", style: .plain, target: self,
-                                         action: #selector(backItemPressed))
-        leftBarBtn.image = UIImage(named: "back")
-        //用于消除左边空隙，要不然按钮顶不到最前面
-        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil,
-                                     action: nil)
-        spacer.width = -10
-        spacer.tintColor = UIColor.black
-        leftBarBtn.tintColor = UIColor.black
-        self.navigationItem.leftBarButtonItems = [spacer, leftBarBtn]
         
         //传统webview的使用
 //        let myWebView:UIWebView = UIWebView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
@@ -52,8 +56,9 @@ class HelpDocumentViewController: UIViewController,WKNavigationDelegate, WKUIDel
         myWKWebView.backgroundColor = UIColor.white
         self.automaticallyAdjustsScrollViewInsets = false//具体什么效果未知
         
-        myWKWebView.navigationDelegate = self
-        myWKWebView.uiDelegate = self;
+        //懒加载处已写
+//        myWKWebView.navigationDelegate = self
+//        myWKWebView.uiDelegate = self;
         
         //加载本地文件
 //        let wkPath = Bundle.main.path(forResource: "咕咚APP截图操作", ofType: "pdf")
@@ -79,7 +84,7 @@ class HelpDocumentViewController: UIViewController,WKNavigationDelegate, WKUIDel
 
     }
     
-    @objc func backItemPressed() {
+    override func backItemPressed() {
         if myWKWebView.canGoBack {
             myWKWebView.goBack()
         }else{

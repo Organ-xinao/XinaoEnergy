@@ -12,6 +12,12 @@
 		BF642A99211AD89400A32D50 /* 咕咚APP截图操作.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BF642A98211AD89300A32D50 /* 咕咚APP截图操作.pdf */; };
 		BF8C94692118139E001CC587 /* PersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C94682118139E001CC587 /* PersonalTableViewCell.swift */; };
 		BF8C946B21183444001CC587 /* PersonTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C946A21183444001CC587 /* PersonTableViewCellModel.swift */; };
+		BF8D0F46212A4CE5006631C2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F45212A4CE5006631C2 /* ChangePasswordViewController.swift */; };
+		BF8D0F49212A9FAE006631C2 /* ChangeNumberPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F47212A9FAE006631C2 /* ChangeNumberPasswordViewController.swift */; };
+		BF8D0F4A212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8D0F48212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib */; };
+		BF8D0F4F212AC0EF006631C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF8D0F51212AC0EF006631C2 /* InfoPlist.strings */; };
+		BF8D0F5E212BEAB9006631C2 /* MaxCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F5D212BEAB9006631C2 /* MaxCardViewController.swift */; };
+		BF8D0F60212BEC5C006631C2 /* AddNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */; };
 		FB0EF4E0211749060013229B /* KnowLeadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */; };
 		FB1363E22119F09600231C11 /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1363E12119F09600231C11 /* QrCodeViewController.swift */; };
 		FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2C8C61210960F200E4EA65 /* BaseViewController.swift */; };
@@ -49,6 +55,21 @@
 		BF642A98211AD89300A32D50 /* 咕咚APP截图操作.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "咕咚APP截图操作.pdf"; sourceTree = "<group>"; };
 		BF8C94682118139E001CC587 /* PersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTableViewCell.swift; sourceTree = "<group>"; };
 		BF8C946A21183444001CC587 /* PersonTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCellModel.swift; sourceTree = "<group>"; };
+		BF8D0F45212A4CE5006631C2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		BF8D0F47212A9FAE006631C2 /* ChangeNumberPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNumberPasswordViewController.swift; sourceTree = "<group>"; };
+		BF8D0F48212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeNumberPasswordViewController.xib; sourceTree = "<group>"; };
+		BF8D0F4B212ABE48006631C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		BF8D0F4C212ABE48006631C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BF8D0F50212AC0EF006631C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BF8D0F52212AC0F5006631C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF8D0F53212B97A7006631C2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/Main.strings; sourceTree = "<group>"; };
+		BF8D0F54212B97A7006631C2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BF8D0F55212B97A7006631C2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF8D0F56212B97D5006631C2 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Main.strings"; sourceTree = "<group>"; };
+		BF8D0F57212B97D5006631C2 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BF8D0F58212B97D6006631C2 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BF8D0F5D212BEAB9006631C2 /* MaxCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxCardViewController.swift; sourceTree = "<group>"; };
+		BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavViewController.swift; sourceTree = "<group>"; };
 		FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeTableViewCell.swift; sourceTree = "<group>"; };
 		FB1363E12119F09600231C11 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		FB2C8C61210960F200E4EA65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +192,13 @@
 				FB71B637211975EC00DA3A58 /* CameraView.swift */,
 				FB71B6392119763C00DA3A58 /* CameraViewController.swift */,
 				FB1363E12119F09600231C11 /* QrCodeViewController.swift */,
+				BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */,
+				BF8D0F5D212BEAB9006631C2 /* MaxCardViewController.swift */,
 				BF642A96211ACEAA00A32D50 /* HelpDocumentViewController.swift */,
+				BF8D0F45212A4CE5006631C2 /* ChangePasswordViewController.swift */,
+				BF8D0F47212A9FAE006631C2 /* ChangeNumberPasswordViewController.swift */,
+				BF8D0F48212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib */,
+				BF8D0F51212AC0EF006631C2 /* InfoPlist.strings */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -222,6 +249,8 @@
 			knownRegions = (
 				en,
 				Base,
+				zh,
+				"zh-Hans-CN",
 			);
 			mainGroup = FC81C88F20FED8FA00CF8252;
 			productRefGroup = FC81C89920FED8FB00CF8252 /* Products */;
@@ -238,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8D0F4A212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib in Resources */,
+				BF8D0F4F212AC0EF006631C2 /* InfoPlist.strings in Resources */,
 				FC81C8A620FED8FB00CF8252 /* LaunchScreen.storyboard in Resources */,
 				FC81C8A320FED8FB00CF8252 /* Assets.xcassets in Resources */,
 				BF642A99211AD89400A32D50 /* 咕咚APP截图操作.pdf in Resources */,
@@ -300,9 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0EF4E0211749060013229B /* KnowLeadgeTableViewCell.swift in Sources */,
+				BF8D0F5E212BEAB9006631C2 /* MaxCardViewController.swift in Sources */,
 				FCCF02872112F39E00CF9E85 /* LineChartsViewController.swift in Sources */,
 				FCCF02882112F39E00CF9E85 /* PieChartsViewController.swift in Sources */,
 				FCCF02892112F39E00CF9E85 /* LineButton.swift in Sources */,
+				BF8D0F49212A9FAE006631C2 /* ChangeNumberPasswordViewController.swift in Sources */,
 				FCCF028A2112F39E00CF9E85 /* BarChartsViewController.swift in Sources */,
 				FCCF028B2112F39E00CF9E85 /* PublicParamter.swift in Sources */,
 				FCCF028C2112F39E00CF9E85 /* ChartsTabViewController.swift in Sources */,
@@ -312,8 +345,10 @@
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */,
+				BF8D0F46212A4CE5006631C2 /* ChangePasswordViewController.swift in Sources */,
 				FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */,
 				FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */,
+				BF8D0F60212BEC5C006631C2 /* AddNavViewController.swift in Sources */,
 				FB71B638211975EC00DA3A58 /* CameraView.swift in Sources */,
 				FB71B63A2119763C00DA3A58 /* CameraViewController.swift in Sources */,
 				FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */,
@@ -332,10 +367,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BF8D0F51212AC0EF006631C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF8D0F50212AC0EF006631C2 /* zh-Hans */,
+				BF8D0F52212AC0F5006631C2 /* en */,
+				BF8D0F55212B97A7006631C2 /* zh */,
+				BF8D0F58212B97D6006631C2 /* zh-Hans-CN */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		FC81C89F20FED8FB00CF8252 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FC81C8A020FED8FB00CF8252 /* Base */,
+				BF8D0F4B212ABE48006631C2 /* zh-Hans */,
+				BF8D0F53212B97A7006631C2 /* zh */,
+				BF8D0F56212B97D5006631C2 /* zh-Hans-CN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -345,6 +394,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC81C8A520FED8FB00CF8252 /* Base */,
+				BF8D0F4C212ABE48006631C2 /* zh-Hans */,
+				BF8D0F54212B97A7006631C2 /* zh */,
+				BF8D0F57212B97D5006631C2 /* zh-Hans-CN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -415,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

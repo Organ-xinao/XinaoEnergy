@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "7tv-Wm-Nh4"; */
+"7tv-Wm-Nh4.normalTitle" = "发送";
+
+/* Class = "UINavigationItem"; title = "全国"; ObjectID = "FvK-7S-x9C"; */
+"FvK-7S-x9C.title" = "全国";
+
+/* Class = "UIButton"; normalTitle = "连接"; ObjectID = "TAd-DK-zoO"; */
+"TAd-DK-zoO.normalTitle" = "连接";
+
+/* Class = "UITabBarItem"; title = "客户意见"; ObjectID = "VlV-S7-gK9"; */
+"VlV-S7-gK9.title" = "客户意见";
+
+/* Class = "UINavigationItem"; title = "客户意见"; ObjectID = "XU2-UC-HkX"; */
+"XU2-UC-HkX.title" = "客户意见";
+
+/* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "cg5-xk-rPa"; */
+"cg5-xk-rPa.title" = "个人中心";
+
+/* Class = "UINavigationItem"; title = "知识库"; ObjectID = "dfF-94-pX3"; */
+"dfF-94-pX3.title" = "知识库";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "eb1-ct-qZN"; */
+"eb1-ct-qZN.title" = "首页";
+
+/* Class = "UILabel"; text = "我是第一页"; ObjectID = "ggP-bk-yw1"; */
+"ggP-bk-yw1.text" = "我是第一页";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "oZ2-wG-EQW"; */
+"oZ2-wG-EQW.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "知识库"; ObjectID = "pav-h0-jHg"; */
+"pav-h0-jHg.title" = "知识库";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "tKc-QB-Jfs"; */
+"tKc-QB-Jfs.title" = "Item";

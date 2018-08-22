@@ -43,7 +43,14 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headerImageView?.layer.cornerRadius = (headerImageView?.frame.width)! / 2
         // image还需要加上这一句, 不然无效
         headerImageView?.layer.masksToBounds = true
+        /*
+         通过下面方法1来加载图片时，图片会一直缓存在内存中，一般情况不推荐使用这种方式，
+         一个是缓存不可控；第二个图片资源得直接加载到项目中，不方便管理，而且每次添加新图片时工程文件都会变动。
+         
+         通过方法2来加载图片时，每次都会从硬盘里读图片，这个操作是比较耗时的，文章开头处的两篇文章都是以这个方法来加载图片的。
+         */
         headerImageView.image = UIImage(named: "Group 17 Copy")
+//        headerImageView.image = UIImage(contentsOfFile: "Group 17 Copy")
         headerView.addSubview(headerImageView)
         
         let personName:UILabel = UILabel.init(frame: CGRect(x: 0, y: 115, width: kScreenWidth, height: 20))
@@ -126,14 +133,18 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        let cell = tableView.cellForRow(at: indexPath)
 //
 //            print(cell)
-        if indexPath.section == 1 && indexPath.row == 0 {
-            let helpViewController = HelpDocumentViewController()
-            let helpNav = UINavigationController(rootViewController: helpViewController)
-            self.hidesBottomBarWhenPushed = true
-            self.present(helpNav, animated: true) {
-                print("你打开了帮组文档")
-            }
-            self.hidesBottomBarWhenPushed = false
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let changePassword = ChangePasswordViewController()
+            let changeNav = UINavigationController(rootViewController: changePassword)
+            openChildVC(childNavName:changeNav)
+        }else if indexPath.section == 0, indexPath.row == 1 {
+            let maxCardVc = MaxCardViewController()
+            let maxCardNav = UINavigationController(rootViewController: maxCardVc)
+            openChildVC(childNavName: maxCardNav)
+        }else if indexPath.section == 1 && indexPath.row == 0 {
+            let helpVc = HelpDocumentViewController()
+            let helpNav = UINavigationController(rootViewController: helpVc)
+            openChildVC(childNavName:helpNav)
         }else if indexPath.section == 1 && indexPath.row == 1 {
             showConfirm (confrimMessage:"确定清除缓存吗？", hanlderType:1,selectedIndexPath:indexPath)
         }else if indexPath.section == tableCellModels.count {
@@ -314,6 +325,13 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
+    }
+    
+    //打开子页面
+    func openChildVC(childNavName:UINavigationController) {
+        self.hidesBottomBarWhenPushed = true
+        self.present(childNavName, animated: true, completion: nil)
+        self.hidesBottomBarWhenPushed = false
     }
     
     //显示确认框
