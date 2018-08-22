@@ -31,7 +31,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //    }
-    
+//    
 //    @objc func keyboardWillShow(notification:NSNotification){
 //        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //        let width = self.view.frame.size.width
@@ -121,7 +121,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         buttonView.setTitleColor(UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1),for: .highlighted) //触摸状态下文字的颜色
         buttonView.layer.cornerRadius = 15
         buttonView.layer.backgroundColor = UIColor(red: 31/255, green: 65/255, blue: 172/255, alpha: 1).cgColor
-        buttonView.addTarget(self, action: #selector(LoginViewController.startTouch), for: UIControlEvents.touchUpInside)
+        buttonView.addTarget(self, action: #selector(LoginViewController.startTouch(_:)), for: UIControlEvents.touchUpInside)
         contentView.addSubview(buttonView)
         //MARK:设置内容页大小
         contentView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: UIScreen.main.bounds.height*2/5+160)
@@ -145,8 +145,12 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         return true;
     }
     
-    @objc func startTouch(){
-        
+    @objc func startTouch(_ button:UIButton){
+        UIView.animate(withDuration: 0.2, animations: {
+            button.backgroundColor = UIColor(red: 31/255, green: 65/255, blue: 172/255, alpha: 0.5)
+        }) { (true) in
+            button.backgroundColor = UIColor(red: 31/255, green: 65/255, blue: 172/255, alpha: 1)
+        }
         requestLoginNet()
     }
     func requestLoginNet(){
