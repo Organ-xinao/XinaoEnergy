@@ -27,26 +27,26 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//    }
-//    
-//    @objc func keyboardWillShow(notification:NSNotification){
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//        let width = self.view.frame.size.width
-//        let height = self.view.frame.size.height
-//        let rect = CGRect(x: 0, y: -156, width: width, height: height)
-//        self.view.frame = rect
-//        }
-//    }
-//
-//    @objc func keyboardWillHide(notification:NSNotification){
-//        let width = self.view.frame.size.width
-//        let height = self.view.frame.size.height
-//        let rect = CGRect(x: 0, y: 0, width: width, height: height)
-//        self.view.frame = rect
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+        let width = self.view.frame.size.width
+        let height = self.view.frame.size.height
+        let rect = CGRect(x: 0, y: -156, width: width, height: height)
+        self.view.frame = rect
+        }
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification){
+        let width = self.view.frame.size.width
+        let height = self.view.frame.size.height
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+        self.view.frame = rect
+    }
     func setLayoutFrame(){
         
         
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         let inputNameImageView = UIImageView(image: UIImage(named: "用户名 copy"))
         inputNameImageView.frame = CGRect(x: 0, y: 10, width: 20, height: 20)
         
-        textNameField = UITextField(frame: CGRect(x: 30, y: 0, width: inputNameView.frame.width-30, height: inputNameView.frame.height))
+        textNameField.frame = CGRect(x: 30, y: 0, width: inputNameView.frame.width-30, height: inputNameView.frame.height)
         textNameField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
         textNameField.minimumFontSize=11  //最小可缩小的字号
         /** 水平对齐 **/
@@ -74,6 +74,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         textNameField.keyboardType = UIKeyboardType.default
         //textNameField.becomeFirstResponder()
         textNameField.font = UIFont.boldSystemFont(ofSize: 14)
+        textNameField.tag = 1
         textNameField.returnKeyType = UIReturnKeyType.next
         textNameField.placeholder = "用户名"
         textNameField.text = ""
@@ -90,7 +91,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         let inputPassImageView = UIImageView(image: UIImage(named: "密码 copy"))
         inputPassImageView.frame = CGRect(x: 0, y: 10, width: 20, height: 20)
         
-        textPassField = UITextField(frame: CGRect(x: 30, y: 0, width: inputPassView.frame.width-30, height: inputPassView.frame.height))
+        textPassField.frame = CGRect(x: 30, y: 0, width: inputPassView.frame.width-30, height: inputPassView.frame.height)
         textPassField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
         textPassField.minimumFontSize=11  //最小可缩小的字号
         /** 水平对齐 **/
@@ -103,6 +104,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
         textPassField.keyboardType = UIKeyboardType.default
         textPassField.returnKeyType = UIReturnKeyType.done //表示完成输入
         textPassField.font = UIFont.boldSystemFont(ofSize: 14)
+        textPassField.tag = 2
         textPassField.placeholder = "密码"
         textPassField.text = ""
         
@@ -137,8 +139,15 @@ class LoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDele
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //收起键盘
-        textField.resignFirstResponder()
+        if textField.tag == 2{
+            //收起键盘
+            textField.resignFirstResponder()
+            
+            //登录
+            requestLoginNet()
+        }else{
+            textPassField.becomeFirstResponder()
+        }
         print("123")
         //打印出文本框中的值
         print(textField.text as Any)
