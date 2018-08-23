@@ -70,6 +70,8 @@
 		BF8D0F58212B97D6006631C2 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BF8D0F5D212BEAB9006631C2 /* MaxCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxCardViewController.swift; sourceTree = "<group>"; };
 		BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavViewController.swift; sourceTree = "<group>"; };
+		BFD15325212EA5F70089B0B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BFD15326212EA5F70089B0B0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeTableViewCell.swift; sourceTree = "<group>"; };
 		FB1363E12119F09600231C11 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		FB2C8C61210960F200E4EA65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		19F050945BCF380CF902ACAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFD15326212EA5F70089B0B0 /* libsqlite3.0.tbd */,
+				BFD15325212EA5F70089B0B0 /* libsqlite3.tbd */,
 				BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */,
 			);
 			name = Frameworks;
@@ -180,13 +184,13 @@
 				FC2DA01A210706D100BAAD9A /* TableViewController.swift */,
 				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
 				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
-				FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */,
-				FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */,
-				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
-				FB590F612113F78B007FFD4C /* OcModule.swift */,
-				FB590F642113F82D007FFD4C /* Object-c.m */,
-				FB590F632113F82D007FFD4C /* XinaoEnergy-Bridging-Header.h */,
 				FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */,
+				FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */,
+				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
+				FB590F642113F82D007FFD4C /* Object-c.m */,
+				FB590F612113F78B007FFD4C /* OcModule.swift */,
+				FB590F632113F82D007FFD4C /* XinaoEnergy-Bridging-Header.h */,
+				FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */,
 				BF8C94682118139E001CC587 /* PersonalTableViewCell.swift */,
 				BF8C946A21183444001CC587 /* PersonTableViewCellModel.swift */,
 				FB71B637211975EC00DA3A58 /* CameraView.swift */,
@@ -307,6 +311,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -315,6 +320,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -538,6 +544,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -561,6 +568,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "XinaoEnergy/XinaoEnergy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

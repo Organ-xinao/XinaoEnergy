@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate {
     
     var headerView:UIView!
     var personalTable:UITableView!
@@ -294,7 +294,31 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //清除缓存
     func clearCache(selectedIndexPath:IndexPath) {
-        
+        var clearResult = false
+        //原生简易菊花旋转框
+//        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+//
+//        activity.frame = CGRect(x: (kScreenWidth - 50)/2, y: (kScreenHeight-50)/2, width: 50, height: 50)
+//
+//        activity.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
+//
+//        //开始转动
+//
+//        activity.startAnimating()
+//
+//        self.view.addSubview(activity)
+        //使用第三方库MB
+        let HUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+        HUD.delegate = self
+
+        //常用设置
+        //小矩形的背景色
+        HUD.bezelView.color = UIColor.clear
+        HUD.minSize = CGSize(width: 50, height: 50)
+        //显示的文字
+        HUD.label.text = "清理中..."
+        //设置背景,加遮罩
+        //HUD.backgroundView.style = .blur //或SolidColor
         // 取出cache文件夹目录 缓存文件都在这个目录下
         
         let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
@@ -314,16 +338,21 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 do {
                     
                     try FileManager.default.removeItem(atPath: path)
-                    //修改文字
-                    let selectedCell = personalTable.cellForRow(at: selectedIndexPath)
-                    let  rightLabel = selectedCell?.viewWithTag(121) as! UILabel
-                    rightLabel.text = "0M"
+                    clearResult = true
                 } catch {
-                    
-                    
-                    
+                    clearResult = false
                 }
             }
+        }
+        if clearResult == true{
+            //修改文字
+            let selectedCell = personalTable.cellForRow(at: selectedIndexPath)
+            let  rightLabel = selectedCell?.viewWithTag(121) as! UILabel
+            rightLabel.text = "0M"
+            //停止转动并且隐藏
+//            activity.hidesWhenStopped = true
+//            activity.stopAnimating()
+            HUD.hide(animated: true, afterDelay:0)
         }
     }
     
@@ -338,12 +367,21 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func showConfirm (confrimMessage:String, hanlderType:Int, selectedIndexPath:IndexPath) {
         
         
-        let alertController = UIAlertController(title:"提示",message:confrimMessage,preferredStyle: .alert);
-        let canceAction = UIAlertAction(title:"取消",style:.cancel,handler:nil);
+        let alertController = UIAlertController(title:"提示",message:confrimMessage,preferredStyle: .alert)
+        let canceAction = UIAlertAction(title:"取消",style:.cancel,handler:nil)
         let okAciton = UIAlertAction(title:"确定",style:.default,handler: {action in
             switch (hanlderType){
             case 1:
-                self.clearCache(selectedIndexPath:selectedIndexPath)
+                let selectedCell = self.personalTable.cellForRow(at: selectedIndexPath)
+                let  rightLabel = selectedCell?.viewWithTag(121) as! UILabel
+                if rightLabel.text == "0M"{
+                    let alertVc = UIAlertController(title: "提示", message: "缓存无需清理", preferredStyle: .alert)
+                    let closeAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    alertVc.addAction(closeAction)
+                    self.present(alertVc, animated: true, completion: nil)
+                }else{
+                    self.clearCache(selectedIndexPath:selectedIndexPath)
+                }
             case 2:
 //                let login = LoginViewController()
 //                let window = UIApplication.shared.delegate?.window

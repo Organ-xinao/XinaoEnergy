@@ -60,7 +60,39 @@ class ChangeNumberPasswordViewController: UIViewController, UITextFieldDelegate{
     }
     @objc func changePassword () {
         if newTextField.text != confrimTextField.text{
-//            let alertview:UItoa =
+            let alertview:UIAlertController = UIAlertController.init(title: "提示", message: "两次输入密码不同，请重新输入", preferredStyle: UIAlertControllerStyle.alert)
+            let okBtn:UIAlertAction = UIAlertAction.init(title: "确定", style: .cancel, handler: nil)
+            alertview.addAction(okBtn)
+            self.present(alertview, animated: true, completion: nil)
+        }else {
+            if oldTextField.text == newTextField.text{
+                let alertview:UIAlertController = UIAlertController.init(title: "提示", message: "新旧密码相同，请重新输入", preferredStyle: UIAlertControllerStyle.alert)
+                let okBtn:UIAlertAction = UIAlertAction.init(title: "确定", style: .cancel, handler: nil)
+                alertview.addAction(okBtn)
+                self.present(alertview, animated: true, completion: nil)
+            }else{
+                //利用GCD和UILabel实现,代码如下
+                //在label下面添加遮盖层
+                //设置修改成功提示
+                let zgc = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
+                zgc.backgroundColor = UIColor.init(white: 1, alpha: 0.3)
+                self.view.addSubview(zgc)
+                let label = UILabel.init(frame: CGRect(x: (kScreenWidth-100)/2, y: (kScreenHeight-64-100)/2, width: 100, height: 100))
+                label.text = "修改成功"
+                label.font = UIFont.systemFont(ofSize: 15)
+                label.backgroundColor = UIColor.gray
+                label.textAlignment = .center
+                label.layer.cornerRadius = 4
+                label.layer.masksToBounds = true
+                zgc.addSubview(label)
+                DispatchQueue.global().async {
+                    Thread.sleep(forTimeInterval: 2)//延时2秒执行
+                    //回到主线程
+                    DispatchQueue.main.async {
+                        zgc.removeFromSuperview()
+                    }
+                }
+            }
         }
     }
     
