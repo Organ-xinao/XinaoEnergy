@@ -25,6 +25,9 @@
 		FB590F652113F82D007FFD4C /* Object-c.m in Sources */ = {isa = PBXBuildFile; fileRef = FB590F642113F82D007FFD4C /* Object-c.m */; };
 		FB71B638211975EC00DA3A58 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71B637211975EC00DA3A58 /* CameraView.swift */; };
 		FB71B63A2119763C00DA3A58 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71B6392119763C00DA3A58 /* CameraViewController.swift */; };
+		FB86777C2133D18D007F6EA8 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FB8677792133D18B007F6EA8 /* index.html */; };
+		FB86777D2133D18D007F6EA8 /* jquery-1.11.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FB86777A2133D18B007F6EA8 /* jquery-1.11.1.min.js */; };
+		FB86777E2133D18D007F6EA8 /* pdf-2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB86777B2133D18C007F6EA8 /* pdf-2.png */; };
 		FB8BCE4D2112B0E0005906A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */; };
 		FC2DA00F2101C96100BAAD9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA00E2101C96100BAAD9A /* MainViewController.swift */; };
 		FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */; };
@@ -80,6 +83,9 @@
 		FB590F642113F82D007FFD4C /* Object-c.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Object-c.m"; sourceTree = "<group>"; };
 		FB71B637211975EC00DA3A58 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		FB71B6392119763C00DA3A58 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FB8677792133D18B007F6EA8 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = ../../index.html; sourceTree = "<group>"; };
+		FB86777A2133D18B007F6EA8 /* jquery-1.11.1.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "jquery-1.11.1.min.js"; path = "../../jquery-1.11.1.min.js"; sourceTree = "<group>"; };
+		FB86777B2133D18C007F6EA8 /* pdf-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf-2.png"; sourceTree = "<group>"; };
 		FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC2DA00E2101C96100BAAD9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 		FC81C88F20FED8FA00CF8252 = {
 			isa = PBXGroup;
 			children = (
+				FB8677792133D18B007F6EA8 /* index.html */,
+				FB86777A2133D18B007F6EA8 /* jquery-1.11.1.min.js */,
+				FB86777B2133D18C007F6EA8 /* pdf-2.png */,
 				FC81C89A20FED8FB00CF8252 /* XinaoEnergy */,
 				FC81C89920FED8FB00CF8252 /* Products */,
 				9CA390A2A00D15F3E6BB4CA4 /* Pods */,
@@ -279,6 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB86777C2133D18D007F6EA8 /* index.html in Resources */,
+				FB86777D2133D18D007F6EA8 /* jquery-1.11.1.min.js in Resources */,
+				FB86777E2133D18D007F6EA8 /* pdf-2.png in Resources */,
 				BF8D0F4A212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib in Resources */,
 				BF8D0F4F212AC0EF006631C2 /* InfoPlist.strings in Resources */,
 				FC81C8A620FED8FB00CF8252 /* LaunchScreen.storyboard in Resources */,
