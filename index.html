@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta user-scalable = no>
+<title>jQuery可展开收缩三级下拉菜单代码 - 站长素材</title>
+<style type="text/css">
+html {
+    font-size : 20px;
+    height:100%
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 25px !important;
+    }3
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 26.75px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 30px !important;
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 35px !important;
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 40px !important;
+    }
+}
+*{margin: 0;padding: 0}
+.box{
+	height:100%;
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items:stretch;
+}
+.item1 {
+	flex-grow: 1; /* default 0 */
+}
+.item2 {
+	flex-grow: 2; /* default 0 */
+}
+.item3 {
+	flex-grow: 3; /* default 0 */
+}
+.item4 {
+	flex-grow: 4; /* default 0 */
+}
+body{font-size: 1rem;font-family: "宋体","微软雅黑";height:100%}
+ul,li{list-style: none;}
+a:link,a:visited{text-decoration: none;}
+.borderLeft{border-left:solid 2px #35a9ff;}
+.list{width: 100%;border-bottom:solid 1px #f6f6f6;color:#676767}
+.itemRight{display: -webkit-flex; /* Safari */display: flex;flex-direction: row;width: 100%;color:#676767;height:2.2rem;font-weight:bold;line-height: 2.2rem;}
+.list ul li{background-color:#f6f6f6; border-bottom:solid 1px #ededed;}
+.list ul li a{padding-left: 10px; font-size:1rem; display: block; font-weight:bold; height:2.2rem;line-height: 2.2rem;position: relative;color:#676767}
+.list ul li .inactive{}
+.list ul li .inactives{background:url(images/on.png) no-repeat right center;}
+.list ul li ul{display: none;}
+.list ul li ul li { border-left:0; border-right:0; background-color:#ededed; border-color:#467ca2;}
+.list ul li ul li ul{display: none;}
+.list ul li ul li a{ padding-left:20px;color:#676767}
+.list ul li ul li ul li { background-color:#ededed; border-color:#6196bb; }
+.last{ background-color:#f6f6f6; border-color:#6196bb; }
+.list ul li ul li ul li a{ padding-left:30px;color:#676767}
+</style>
+</head>
+<body>
+<div class="box">
+	<div style="background-color: #f6f6f6;width:6.5rem">
+		<div class="list">
+			<ul class="yiji">
+				<li><a href="#" class="inactive">中国美协章程</a>
+					<ul style="display: none"></ul></li>
+				<li><a href="#" class="inactive">团体会员</a>
+					<ul style="display: none">
+						<li><a href="#" class="inactive active">美协机关</a>
+							<ul>
+								<li><a href="#">办公室</a></li>
+								<li><a href="#">人事处</a></li>
+								<li><a href="#">组联部</a></li>
+								<li><a href="#">外联部</a></li>
+								<li><a href="#">研究部</a></li>
+								<li><a href="#">维权办</a></li>
+							</ul>
+						</li>
+						<li class="last"><a href="#">《美术》杂志社</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="inactive">组织机构</a>
+					<ul style="display: none">
+						<li><a href="#" class="inactive active">美协机关</a>
+							<ul>
+								<li><a href="#">办公室</a></li>
+								<li><a href="#">人事处</a></li>
+								<li><a href="#">组联部</a></li>
+								<li><a href="#">外联部</a></li>
+								<li><a href="#">研究部</a></li>
+								<li><a href="#">维权办</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="inactive active">中国文联美术艺术中心</a>
+							<ul>
+								<li><a href="#">综合部</a></li>
+								<li><a href="#">大型活动部</a></li>
+								<li><a href="#">展览部</a></li>
+								<li><a href="#">艺委会工作部</a></li>
+								<li><a href="#">信息资源部</a></li>
+								<li><a href="#">双年展办公室</a></li>
+							</ul>
+						</li>
+						<li class="last"><a href="#">《美术》杂志社</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="item1" id="item1"style="background-color: #ffffff;">
+        <div class="itemRight" >
+			<img src="pdf-2.png" />
+				<div >第1行</div>
+		</div>
+		<div class="itemRight" >
+			<img src="pdf-2.png"/>
+			<div>第2行</div>
+		</div>
+        
+	</div>
+</div>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var num = 5
+        $('.inactive').click(function(){
+            if($(this).siblings('ul').css('display')=='none'){
+                $(this).parent('li').addClass('borderLeft')
+                $(this).siblings('ul').slideDown(100).children('li');
+                $(this).parent('li').siblings('li').removeClass('borderLeft');
+                $(this).parent('li').siblings('li').children('ul').slideUp(100);
+            }else{
+                //控制左边边框
+                $(this).parent('li').removeClass('borderLeft')
+                //控制自身菜单下子菜单隐藏
+                $(this).siblings('ul').slideUp(100);
+                //控制自身菜单下子菜单隐藏
+                $(this).siblings('ul').children('li').children('ul').slideUp(100);
+            }
+                             //添加右边的内容
+                             setDomForRightItem()
+                             //alert('111')
+                             //向 swift 发送数据，这里的‘msgBridge’就是 swift 中添加的消息通道的 name
+                             //window.webkit.messageHandlers.msgBridge.postMessage({"msg":"test"});
+        })
+                      
+                      
+                      $('.item1').click(function(){
+                                        var msg = "第"+num+"行";
+                                        num ++
+                                        
+                        //向 swift 发送数据，这里的‘msgBridge’就是 swift 中添加的消息通道的 name
+                        window.webkit.messageHandlers.msgBridge.postMessage({"msg":msg});
+                        })
+      
+      
+      
+
+    });
+    //这是一个普通的 js 函数，将在 swift 中调用该函数
+    function funcforswift(msg){
+        var str = '<div class="itemRight"><img src="pdf-2.png"/><div>'+msg+'</div></div>'
+        //document.gitElementById('item1')
+        $('.item1').append(msg)
+    }
+function setDomForRightItem(){
+    $('.item1').empty()
+    
+    for(var i = 0;i < 5;i ++){
+        var strDom = '<div class="itemRight" ><img src="pdf-2.png" /><div >第'+i+'行</div></div>';
+        $('.item1').append(strDom)
+    }
+    
+}
+</script>
+</body>
+</html>

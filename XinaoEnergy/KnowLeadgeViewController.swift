@@ -7,17 +7,41 @@
 //
 
 import UIKit
+import WebKit
 
-class KnowLeadgeViewController: UIViewController{
+class KnowLeadgeViewController: UIViewController,WKUIDelegate{
     let meanArr : Array<String> = ["全部","基础类","进阶类","高级类","拔高类","终极类","究极类"]
     let listArr : Array<(String,String)> = [("人类起源","pdf-2"),("人类初级进化","Group 8 Copy 3"),("人类中极进化","pdf-2"),("人类终极进化","pdf-2"),("人类高级进化","pdf-2"),("人类升华","pdf-2")]//"人类起源","人类初级进化","人类中极进化","人类高级进化","人类终极进化","人类升华"
     var tableView1 = UITableView()
     var tableView2 = UITableView()
+    var webView : WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setFrameLayout()
+//        setFrameLayout()
         // Do any additional setup after loading the view.
+        let conf = WKWebViewConfiguration()
+        conf.userContentController = WKUserContentController()
+        conf.preferences.javaScriptEnabled = true
+        conf.ignoresViewportScaleLimits = true//禁止缩放功能
+        conf.selectionGranularity = WKSelectionGranularity.character
+        conf.allowsInlineMediaPlayback = true
+        //注册 js 消息通道
+        conf.userContentController.add(self as WKScriptMessageHandler , name: "msgBridge")
         
+        webView = WKWebView(frame: .zero, configuration: conf)  //.zero
+        webView.uiDelegate = self
+        view = webView
+        let bundlePath = Bundle.main.bundlePath
+        
+        let path = "file://\(bundlePath)/index.html"
+        
+        guard let url = URL(string: path) else {
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
         
     }
 
@@ -60,8 +84,35 @@ class KnowLeadgeViewController: UIViewController{
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }
+//js 和 swift 的交互
+extension KnowLeadgeViewController: WKScriptMessageHandler {
+    
+    //接收 js 发来的消息
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        //判断消息通道
+        if(message.name == "msgBridge"){
+            //TODO ...
+            //message.body（any 类型） 即前端 js 传来的数据，如果传字符串这里接收的就是字符串，如果传 json 对象或 js 对象 则这里是 NSDictionary
+            print(message.body)
+            let msg = message.body as! NSDictionary;
+            
+            //swift 调 js函数
+            webView.evaluateJavaScript("funcforswift('\( msg["msg"]  as! String)')", completionHandler: {
+                (any, error) in
+                if (error != nil) {
+                    print(error ?? "err")
+                }
+            })
+        }
+        
+    }
+}
+
 extension KnowLeadgeViewController: UITableViewDelegate,UITableViewDataSource{
     
     func numberOfSections(in tableView:UITableView) ->Int {
