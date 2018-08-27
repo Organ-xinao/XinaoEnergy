@@ -11,6 +11,7 @@ import Charts.Swift
 
 class LineChartsViewController: UIViewController,ChartViewDelegate {
     let lineChartView = LineChartView()
+    var lineCircleColors:[UIColor]!=[]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
     func test2()
     {
         
-        lineChartView.frame = CGRect(x: 20, y: 60, width: self.view.bounds.width - 40, height: 400)
+        lineChartView.frame = CGRect(x: 20, y: 60, width: self.view.bounds.width - 40, height: pageVCHeight-120)
         self.view.addSubview(lineChartView)
         lineChartView.delegate = self
         
-        lineChartView.backgroundColor = UIColor(red: 230/255.0, green: 253/255.0, blue: 253/255.0, alpha: 1.0)
+        lineChartView.backgroundColor = UIColor.white//(red: 13/255.0, green: 21/255.0, blue: 40/255.0, alpha: 1)
         lineChartView.noDataText = "暂无数据"
         
         //设置交互样式
@@ -47,7 +48,8 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
         xAxis.drawGridLinesEnabled = false;//不绘制网格线
         xAxis.spaceMin = 4;//设置label间隔
         xAxis.axisMinimum = 0
-        xAxis.labelTextColor = UIColor.blue//label文字颜色
+        xAxis.axisLineColor = UIColor(white: 1, alpha: 0.1605)
+        xAxis.labelTextColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1)//label文字颜色
         
         //设置Y轴样式
         lineChartView.rightAxis.enabled = false  //不绘制右边轴
@@ -59,17 +61,17 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
         //leftAxis.axisMaximum = 1000 //设置Y轴的最大值
         leftAxis.inverted = false //是否将Y轴进行上下翻转
         leftAxis.axisLineWidth = 1.0/UIScreen.main.scale //设置Y轴线宽
-        leftAxis.axisLineColor = UIColor.cyan//Y轴颜色
+        leftAxis.axisLineColor = UIColor(white: 1, alpha: 0.1605)//Y轴颜色
         //leftAxis.valueFormatter = NumberFormatter()//自定义格式
         //leftAxis.s  //数字后缀单位
         leftAxis.labelPosition = .outsideChart//label位置
-        leftAxis.labelTextColor = UIColor.red//文字颜色
+        leftAxis.labelTextColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1)//文字颜色
         leftAxis.labelFont = UIFont.systemFont(ofSize: 10)//文字字体
         
         
         //设置网格样式
         leftAxis.gridLineDashLengths = [3.0,3.0]  //设置虚线样式的网格线
-        leftAxis.gridColor = UIColor.init(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1) //网格线颜色
+        leftAxis.gridColor = UIColor.init(red: 150/255.0, green: 150/255.0, blue: 150/255.0, alpha: 0.1) //网格线颜色
         leftAxis.gridAntialiasEnabled = true //开启抗锯齿
         
         
@@ -114,14 +116,34 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
             let entry = ChartDataEntry.init(x: Double(i), y: Double(y))
             
             yDataArray1.append(entry)
+            
+            lineCircleColors.append(UIColor(red: 59/255, green: 169/255, blue: 255/255, alpha: 1))
         }
         
         
         let set1 = LineChartDataSet.init(values: yDataArray1, label: "test1")
-        set1.colors = [UIColor.orange]
-        set1.drawCirclesEnabled = false //是否绘制转折点
+        set1.colors = [UIColor(red: 59/255, green: 169/255, blue: 255/255, alpha: 1)]
+        set1.drawCirclesEnabled = true //是否绘制转折点
+        //set1.setCircleColor(UIColor(red: 59/255, green: 169/255, blue: 255/255, alpha: 1))//转折点圆圈的颜色
+        set1.circleColors = lineCircleColors//为选中点变色做准备
+        set1.circleHoleColor = UIColor.white //转折点内部的颜色
         set1.lineWidth = 1
-        set1.mode = .horizontalBezier  //设置曲线是否平滑
+        set1.circleRadius = 5//外圆半径
+        set1.circleHoleRadius = 4//内圆半径
+        set1.mode = .cubicBezier  //设置曲线是否平滑
+        set1.drawValuesEnabled = false //设置是否显示折线上的数据
+        
+        //开启填充色绘制
+        set1.drawFilledEnabled = true
+        //渐变颜色数组
+        let gradientColors = [UIColor(red: 59/255, green: 169/255, blue: 255/255, alpha: 1).cgColor, UIColor.white.cgColor] as CFArray
+        //每组颜色所在位置（范围0~1)
+        let colorLocations:[CGFloat] = [1.0, 0.0]
+        //生成渐变色
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                       colors: gradientColors, locations: colorLocations)
+        //将渐变色作为填充对象s
+        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
         
         var yDataArray2 = [ChartDataEntry]();
         for i in 0...(xValues.count-1) {
@@ -135,7 +157,7 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
         set2.drawCirclesEnabled = false
         set2.lineWidth = 1.0
         
-        let data = LineChartData.init(dataSets: [set1,set2])
+        let data = LineChartData.init(dataSets: [set1])
         
         lineChartView.data = data
         //lineChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeInBack)
@@ -158,9 +180,35 @@ class LineChartsViewController: UIViewController,ChartViewDelegate {
     }
     
     //MARK - chartdelegate
+    //因为转折点内圈颜色是一起设定的，所以无法更改内部颜色
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {
         self.showMarkerView(value: "\(entry.y)")
+        //将选中的数据点的颜色改成黄色
+        var chartDataSet = LineChartDataSet()
+        chartDataSet = (chartView.data?.dataSets[0] as? LineChartDataSet)!
+        let values = chartDataSet.values
+        let index = values.index(where: {$0.x == highlight.x})  //获取索引
+        chartDataSet.circleColors = lineCircleColors //还原
+        chartDataSet.circleColors[index!] = .orange
+        
+        //重新渲染表格
+        chartView.data?.notifyDataChanged()
+        chartView.notifyDataSetChanged()
+    }
+    
+    //折线上的点取消选中回调
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        //print("取消选中的数据")
+        
+        //还原所有点的颜色
+        var chartDataSet = LineChartDataSet()
+        chartDataSet = (chartView.data?.dataSets[0] as? LineChartDataSet)!
+        chartDataSet.circleColors = lineCircleColors
+        
+        //重新渲染表格
+        chartView.data?.notifyDataChanged()
+        chartView.notifyDataSetChanged()
     }
     
     

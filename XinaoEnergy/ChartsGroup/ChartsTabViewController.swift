@@ -8,6 +8,8 @@
 
 import UIKit
 
+let pageVCHeight = kScreenHeight-124
+
 class ChartsTabViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, LineButtonDelagate{
 
     let buttons:NSMutableArray = ["折线图", "柱状图", "饼图"]
@@ -32,9 +34,9 @@ class ChartsTabViewController: UIViewController, UIPageViewControllerDelegate, U
     func createPageController() {
         //初始化
         pageController = UIPageViewController.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [UIPageViewControllerOptionSpineLocationKey:NSNumber(value: 3)])
-        pageController.view.frame = CGRect(x:0, y:124, width:kScreenWidth, height:kScreenHeight-124)
+        pageController.view.frame = CGRect(x:0, y:124, width:kScreenWidth, height:pageVCHeight)
         pageController.delegate=self
-        
+        pageController.view.backgroundColor = UIColor(white: 1, alpha: 0.3)
         //当改为self的时候，打开手势滑动
         pageController.dataSource = nil
         

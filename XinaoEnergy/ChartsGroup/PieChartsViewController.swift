@@ -27,7 +27,7 @@ class PieChartsViewController: UIViewController {
     
     func test3()
     {
-        pieChartView.frame = CGRect(x: 20, y: 60, width: self.view.bounds.width, height: 600)
+        pieChartView.frame = CGRect(x: 20, y: 60, width: self.view.bounds.width - 40, height: pageVCHeight-120)
         self.view.addSubview(pieChartView)
         pieChartView.backgroundColor = UIColor.init(red: 230/255, green: 253/255.0, blue: 253/255.0, alpha: 1)
         pieChartView.setExtraOffsets(left: 40, top: 10, right: 40, bottom: 30)  //设置这块饼的位置
