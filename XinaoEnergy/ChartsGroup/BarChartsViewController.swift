@@ -26,7 +26,7 @@ class BarChartsViewController: UIViewController,ChartViewDelegate {
     }
     func test4()
     {
-        self.barChartView.frame = CGRect(x: 0, y: 60, width: self.view.bounds.width, height: 600)
+        self.barChartView.frame = CGRect(x: 20, y: 60, width: self.view.bounds.width - 40, height: pageVCHeight-120)
         self.barChartView.delegate = self
         
         self.view.addSubview(self.barChartView)
