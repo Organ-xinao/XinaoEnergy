@@ -18,6 +18,10 @@
 		BF8D0F4F212AC0EF006631C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF8D0F51212AC0EF006631C2 /* InfoPlist.strings */; };
 		BF8D0F5E212BEAB9006631C2 /* MaxCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F5D212BEAB9006631C2 /* MaxCardViewController.swift */; };
 		BF8D0F60212BEC5C006631C2 /* AddNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */; };
+		BFD1532B2133D7D10089B0B0 /* SingleStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD1532A2133D7D10089B0B0 /* SingleStationViewController.swift */; };
+		BFD1532F2133E6740089B0B0 /* RealtimeViewStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD1532E2133E6740089B0B0 /* RealtimeViewStatusCell.xib */; };
+		BFD153312133E6A50089B0B0 /* RealTimeProvideViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD153302133E6A50089B0B0 /* RealTimeProvideViewCell.xib */; };
+		BFD153332133E6E50089B0B0 /* RealTimeConsumeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD153322133E6E50089B0B0 /* RealTimeConsumeViewCell.xib */; };
 		FB0EF4E0211749060013229B /* KnowLeadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */; };
 		FB1363E22119F09600231C11 /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1363E12119F09600231C11 /* QrCodeViewController.swift */; };
 		FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2C8C61210960F200E4EA65 /* BaseViewController.swift */; };
@@ -72,6 +76,10 @@
 		BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavViewController.swift; sourceTree = "<group>"; };
 		BFD15325212EA5F70089B0B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BFD15326212EA5F70089B0B0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BFD1532A2133D7D10089B0B0 /* SingleStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStationViewController.swift; sourceTree = "<group>"; };
+		BFD1532E2133E6740089B0B0 /* RealtimeViewStatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealtimeViewStatusCell.xib; sourceTree = "<group>"; };
+		BFD153302133E6A50089B0B0 /* RealTimeProvideViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealTimeProvideViewCell.xib; sourceTree = "<group>"; };
+		BFD153322133E6E50089B0B0 /* RealTimeConsumeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealTimeConsumeViewCell.xib; sourceTree = "<group>"; };
 		FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowLeadgeTableViewCell.swift; sourceTree = "<group>"; };
 		FB1363E12119F09600231C11 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		FB2C8C61210960F200E4EA65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +219,10 @@
 				FB71B6392119763C00DA3A58 /* CameraViewController.swift */,
 				FB1363E12119F09600231C11 /* QrCodeViewController.swift */,
 				BF8D0F51212AC0EF006631C2 /* InfoPlist.strings */,
+				BFD1532A2133D7D10089B0B0 /* SingleStationViewController.swift */,
+				BFD1532E2133E6740089B0B0 /* RealtimeViewStatusCell.xib */,
+				BFD153302133E6A50089B0B0 /* RealTimeProvideViewCell.xib */,
+				BFD153322133E6E50089B0B0 /* RealTimeConsumeViewCell.xib */,
 			);
 			path = XinaoEnergy;
 			sourceTree = "<group>";
@@ -282,9 +294,12 @@
 				BF8D0F4A212A9FAE006631C2 /* ChangeNumberPasswordViewController.xib in Resources */,
 				BF8D0F4F212AC0EF006631C2 /* InfoPlist.strings in Resources */,
 				FC81C8A620FED8FB00CF8252 /* LaunchScreen.storyboard in Resources */,
+				BFD1532F2133E6740089B0B0 /* RealtimeViewStatusCell.xib in Resources */,
 				FC81C8A320FED8FB00CF8252 /* Assets.xcassets in Resources */,
 				BF642A99211AD89400A32D50 /* 咕咚APP截图操作.pdf in Resources */,
 				FC81C8A120FED8FB00CF8252 /* Main.storyboard in Resources */,
+				BFD153332133E6E50089B0B0 /* RealTimeConsumeViewCell.xib in Resources */,
+				BFD153312133E6A50089B0B0 /* RealTimeProvideViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +388,7 @@
 				BF8C94692118139E001CC587 /* PersonalTableViewCell.swift in Sources */,
 				FC2DA0152101CA8A00BAAD9A /* PersonViewController.swift in Sources */,
 				FC2DA01D21070B7700BAAD9A /* todoModel.swift in Sources */,
+				BFD1532B2133D7D10089B0B0 /* SingleStationViewController.swift in Sources */,
 				FC2DA01B210706D100BAAD9A /* TableViewController.swift in Sources */,
 				FC2DA0192106EEF000BAAD9A /* StationViewController.swift in Sources */,
 			);

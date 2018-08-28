@@ -42,7 +42,7 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let pViewController = storyboard.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
             if index == 3{
-               let tabViewController = storyboard.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+               let tabViewController =  SingleStationViewController()
                 viewControllers.add(tabViewController)
             }else{
                viewControllers.add(pViewController)
