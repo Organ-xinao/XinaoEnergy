@@ -181,6 +181,20 @@
 			path = Personal;
 			sourceTree = "<group>";
 		};
+		FB7454012147C3720057D810 /* KnowLeadge */ = {
+			isa = PBXGroup;
+			children = (
+				FB7453F52147BD230057D810 /* CollectionFootView.swift */,
+				FB7453F62147BD230057D810 /* CollectionHeaderView.swift */,
+				FB7453FA2147BD240057D810 /* MyUICollectionViewCell.swift */,
+				FB7453F82147BD240057D810 /* SearchForResultViewController.swift */,
+				FB7453F72147BD240057D810 /* UITableViewControllerCellOne.swift */,
+				FB7453F92147BD240057D810 /* UITableViewControllerCellTwo.swift */,
+				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
+			);
+			path = KnowLeadge;
+			sourceTree = "<group>";
+		};
 		FC81C88F20FED8FA00CF8252 = {
 			isa = PBXGroup;
 			children = (
@@ -205,18 +219,13 @@
 		FC81C89A20FED8FB00CF8252 /* XinaoEnergy */ = {
 			isa = PBXGroup;
 			children = (
+				FB7454012147C3720057D810 /* KnowLeadge */,
 				BF642A98211AD89300A32D50 /* 咕咚APP截图操作.pdf */,
 				FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */,
 				FC81C89D20FED8FB00CF8252 /* ViewController.swift */,
 				FC81C89F20FED8FB00CF8252 /* Main.storyboard */,
 				FC81C8A220FED8FB00CF8252 /* Assets.xcassets */,
 				FC81C8A420FED8FB00CF8252 /* LaunchScreen.storyboard */,
-				FB7453F52147BD230057D810 /* CollectionFootView.swift */,
-				FB7453F62147BD230057D810 /* CollectionHeaderView.swift */,
-				FB7453FA2147BD240057D810 /* MyUICollectionViewCell.swift */,
-				FB7453F82147BD240057D810 /* SearchForResultViewController.swift */,
-				FB7453F72147BD240057D810 /* UITableViewControllerCellOne.swift */,
-				FB7453F92147BD240057D810 /* UITableViewControllerCellTwo.swift */,
 				FC81C8A720FED8FB00CF8252 /* Info.plist */,
 				FB8BCE4C2112B0E0005906A6 /* LoginViewController.swift */,
 				FB2C8C61210960F200E4EA65 /* BaseViewController.swift */,
@@ -226,7 +235,6 @@
 				FC2DA0182106EEF000BAAD9A /* StationViewController.swift */,
 				FC2DA01A210706D100BAAD9A /* TableViewController.swift */,
 				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
-				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
 				FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */,
 				FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */,
 				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
