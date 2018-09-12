@@ -44,6 +44,9 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
             if index == 3{
                let tabViewController =  SingleStationViewController()
                 viewControllers.add(tabViewController)
+            }else if index == 1{
+                let leftViewController = SearchViewController()
+                viewControllers.add(leftViewController)
             }else{
                viewControllers.add(pViewController)
             }

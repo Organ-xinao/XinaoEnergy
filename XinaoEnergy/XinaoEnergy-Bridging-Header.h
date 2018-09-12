@@ -7,6 +7,7 @@
 //
 //#Libs
 #import "MBProgressHUD.h"
+#import "RATreeView.h"
 
 
 //#endif /* XinaoEnergy-Bridging-Header_h */
