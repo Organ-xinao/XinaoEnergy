@@ -44,6 +44,12 @@
 		FB590F652113F82D007FFD4C /* Object-c.m in Sources */ = {isa = PBXBuildFile; fileRef = FB590F642113F82D007FFD4C /* Object-c.m */; };
 		FB71B638211975EC00DA3A58 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71B637211975EC00DA3A58 /* CameraView.swift */; };
 		FB71B63A2119763C00DA3A58 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71B6392119763C00DA3A58 /* CameraViewController.swift */; };
+		FB7453FB2147BD240057D810 /* CollectionFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453F52147BD230057D810 /* CollectionFootView.swift */; };
+		FB7453FC2147BD240057D810 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453F62147BD230057D810 /* CollectionHeaderView.swift */; };
+		FB7453FD2147BD240057D810 /* UITableViewControllerCellOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453F72147BD240057D810 /* UITableViewControllerCellOne.swift */; };
+		FB7453FE2147BD240057D810 /* SearchForResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453F82147BD240057D810 /* SearchForResultViewController.swift */; };
+		FB7453FF2147BD240057D810 /* UITableViewControllerCellTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453F92147BD240057D810 /* UITableViewControllerCellTwo.swift */; };
+		FB7454002147BD240057D810 /* MyUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7453FA2147BD240057D810 /* MyUICollectionViewCell.swift */; };
 		FB86777E2133D18D007F6EA8 /* pdf-2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB86777B2133D18C007F6EA8 /* pdf-2.png */; };
 		FB8677822133D702007F6EA8 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FB8677812133D702007F6EA8 /* index.html */; };
 		FB8677842133D71F007F6EA8 /* jquery-1.11.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FB8677832133D71F007F6EA8 /* jquery-1.11.1.min.js */; };
@@ -121,6 +127,12 @@
 		FB590F642113F82D007FFD4C /* Object-c.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Object-c.m"; sourceTree = "<group>"; };
 		FB71B637211975EC00DA3A58 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		FB71B6392119763C00DA3A58 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FB7453F52147BD230057D810 /* CollectionFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFootView.swift; sourceTree = "<group>"; };
+		FB7453F62147BD230057D810 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		FB7453F72147BD240057D810 /* UITableViewControllerCellOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerCellOne.swift; sourceTree = "<group>"; };
+		FB7453F82147BD240057D810 /* SearchForResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForResultViewController.swift; sourceTree = "<group>"; };
+		FB7453F92147BD240057D810 /* UITableViewControllerCellTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerCellTwo.swift; sourceTree = "<group>"; };
+		FB7453FA2147BD240057D810 /* MyUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUICollectionViewCell.swift; sourceTree = "<group>"; };
 		FB86777B2133D18C007F6EA8 /* pdf-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf-2.png"; sourceTree = "<group>"; };
 		FB8677812133D702007F6EA8 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		FB8677832133D71F007F6EA8 /* jquery-1.11.1.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.1.min.js"; sourceTree = "<group>"; };
@@ -263,6 +275,20 @@
 			path = Personal;
 			sourceTree = "<group>";
 		};
+		FB7454012147C3720057D810 /* KnowLeadge */ = {
+			isa = PBXGroup;
+			children = (
+				FB7453F52147BD230057D810 /* CollectionFootView.swift */,
+				FB7453F62147BD230057D810 /* CollectionHeaderView.swift */,
+				FB7453FA2147BD240057D810 /* MyUICollectionViewCell.swift */,
+				FB7453F82147BD240057D810 /* SearchForResultViewController.swift */,
+				FB7453F72147BD240057D810 /* UITableViewControllerCellOne.swift */,
+				FB7453F92147BD240057D810 /* UITableViewControllerCellTwo.swift */,
+				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
+			);
+			path = KnowLeadge;
+			sourceTree = "<group>";
+		};
 		FC81C88F20FED8FA00CF8252 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +313,7 @@
 		FC81C89A20FED8FB00CF8252 /* XinaoEnergy */ = {
 			isa = PBXGroup;
 			children = (
+				FB7454012147C3720057D810 /* KnowLeadge */,
 				FC81C89B20FED8FB00CF8252 /* AppDelegate.swift */,
 				FC81C89D20FED8FB00CF8252 /* ViewController.swift */,
 				FC81C89F20FED8FB00CF8252 /* Main.storyboard */,
@@ -301,7 +328,6 @@
 				FC2DA0182106EEF000BAAD9A /* StationViewController.swift */,
 				FC2DA01A210706D100BAAD9A /* TableViewController.swift */,
 				FC2DA01C21070B7700BAAD9A /* todoModel.swift */,
-				FC2DA0102101C9FE00BAAD9A /* KnowLeadgeViewController.swift */,
 				FB0EF4DF211749060013229B /* KnowLeadgeTableViewCell.swift */,
 				FC2DA0122101CA7300BAAD9A /* IdeaViewController.swift */,
 				FCCF02852112F39E00CF9E85 /* PublicParamter.swift */,
@@ -481,12 +507,16 @@
 				FB590F652113F82D007FFD4C /* Object-c.m in Sources */,
 				BF686534213E686C0002B966 /* LeftTreeView.swift in Sources */,
 				BFD1533F213648480089B0B0 /* LeftTreeViewController.swift in Sources */,
+				FB7453FC2147BD240057D810 /* CollectionHeaderView.swift in Sources */,
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */,
+				FB7453FF2147BD240057D810 /* UITableViewControllerCellTwo.swift in Sources */,
 				BF8D0F46212A4CE5006631C2 /* ChangePasswordViewController.swift in Sources */,
 				FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */,
 				FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */,
+				FB7453FB2147BD240057D810 /* CollectionFootView.swift in Sources */,
+				FB7453FD2147BD240057D810 /* UITableViewControllerCellOne.swift in Sources */,
 				BF8D0F60212BEC5C006631C2 /* AddNavViewController.swift in Sources */,
 				FB71B638211975EC00DA3A58 /* CameraView.swift in Sources */,
 				FB71B63A2119763C00DA3A58 /* CameraViewController.swift in Sources */,
@@ -494,6 +524,8 @@
 				BFD153352134D6D30089B0B0 /* RealTimeProvideModel.swift in Sources */,
 				BF642A97211ACEAA00A32D50 /* HelpDocumentViewController.swift in Sources */,
 				BF686539213F822F0002B966 /* RealTimeTopTwoCollectionViewCell.swift in Sources */,
+				FB7454002147BD240057D810 /* MyUICollectionViewCell.swift in Sources */,
+				FB7453FE2147BD240057D810 /* SearchForResultViewController.swift in Sources */,
 				BF8C946B21183444001CC587 /* PersonTableViewCellModel.swift in Sources */,
 				FC2DA0112101C9FE00BAAD9A /* KnowLeadgeViewController.swift in Sources */,
 				FB1363E22119F09600231C11 /* QrCodeViewController.swift in Sources */,
