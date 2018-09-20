@@ -20,6 +20,7 @@ class FrameViewController: UITabBarController,UITabBarControllerDelegate {
         //可以在这里设置tabBar item选中的颜色
         //self.tabBarController?.tabBar.tintColor = UIColor.red
         var items: [UITabBarItem] = (self.tabBar.items)!
+        
         //设置默认图片直接在IB添加新tabBar的时候Image选择好，这里是修改未被选中时的图片，针对未选中一值为灰色的解决方法
         //通过name获取图片
         //设置image，同理可设置selectedImage
@@ -27,12 +28,19 @@ class FrameViewController: UITabBarController,UITabBarControllerDelegate {
         let tabbar1Image = UIImage(named: "knowleadge")
         let tabbar2Image = UIImage(named: "idea")
         let tabbar3Image = UIImage(named: "person")
+//        let ssItem = UITabBarItem.init(title: "š", image: tabbar3Image, tag: 4)
+//        items.append(ssItem)
 
         items[0].image = tabbar0Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         items[1].image = tabbar1Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         items[2].image = tabbar2Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         items[3].image = tabbar3Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         fristSelected = true
+        
+//        let ss = UINavigationController(rootViewController: SingleStationViewController())?
+//        self.viewControllers?.append(SingleStationViewController())
+//
+//        items[4].image = tabbar3Image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
 
     override func didReceiveMemoryWarning() {

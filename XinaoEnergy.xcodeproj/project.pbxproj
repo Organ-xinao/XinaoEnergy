@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE9A1EB2448D4E532E1746D6 /* Pods_XinaoEnergy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */; };
+		BF050943214B5E9800A905BB /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF050942214B5E9700A905BB /* CustomSearchBar.swift */; };
+		BF050945214B5F3600A905BB /* CutomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF050944214B5F3600A905BB /* CutomSearchController.swift */; };
 		BF09CA0C21463E52008F5EB5 /* CustomSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09CA0B21463E52008F5EB5 /* CustomSearchViewController.swift */; };
 		BF09CA0E214653DC008F5EB5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09CA0D214653DC008F5EB5 /* SearchViewController.swift */; };
 		BF642A97211ACEAA00A32D50 /* HelpDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF642A96211ACEAA00A32D50 /* HelpDocumentViewController.swift */; };
@@ -25,6 +27,7 @@
 		BF8D0F60212BEC5C006631C2 /* AddNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */; };
 		BF90913B213CDC690053A795 /* LeftCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90913A213CDC690053A795 /* LeftCodeViewController.swift */; };
 		BF90913D213CF95F0053A795 /* LeftCellCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90913C213CF95F0053A795 /* LeftCellCodeModel.swift */; };
+		BF923E1C2153679100534F29 /* CoolNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF923E1B2153679100534F29 /* CoolNavi.swift */; };
 		BFD1532B2133D7D10089B0B0 /* SingleStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD1532A2133D7D10089B0B0 /* SingleStationViewController.swift */; };
 		BFD1532F2133E6740089B0B0 /* RealtimeTopTwoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD1532E2133E6740089B0B0 /* RealtimeTopTwoViewCell.xib */; };
 		BFD153312133E6A50089B0B0 /* RealTimeProvideViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD153302133E6A50089B0B0 /* RealTimeProvideViewCell.xib */; };
@@ -79,6 +82,8 @@
 		2D7E43E89551CB8BF6FBD79F /* Pods-XinaoEnergy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.release.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.release.xcconfig"; sourceTree = "<group>"; };
 		50B58BDC1289AC312589528B /* Pods-XinaoEnergy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XinaoEnergy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XinaoEnergy/Pods-XinaoEnergy.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC1B780C6593CC8A5B3565B /* Pods_XinaoEnergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XinaoEnergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF050942214B5E9700A905BB /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		BF050944214B5F3600A905BB /* CutomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomSearchController.swift; sourceTree = "<group>"; };
 		BF09CA0B21463E52008F5EB5 /* CustomSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchViewController.swift; sourceTree = "<group>"; };
 		BF09CA0D214653DC008F5EB5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF642A96211ACEAA00A32D50 /* HelpDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDocumentViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		BF8D0F5F212BEC5C006631C2 /* AddNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavViewController.swift; sourceTree = "<group>"; };
 		BF90913A213CDC690053A795 /* LeftCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCodeViewController.swift; sourceTree = "<group>"; };
 		BF90913C213CF95F0053A795 /* LeftCellCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCellCodeModel.swift; sourceTree = "<group>"; };
+		BF923E1B2153679100534F29 /* CoolNavi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolNavi.swift; sourceTree = "<group>"; };
 		BFD15325212EA5F70089B0B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BFD15326212EA5F70089B0B0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BFD1532A2133D7D10089B0B0 /* SingleStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStationViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 			children = (
 				BF09CA0D214653DC008F5EB5 /* SearchViewController.swift */,
 				BF09CA0B21463E52008F5EB5 /* CustomSearchViewController.swift */,
+				BF050942214B5E9700A905BB /* CustomSearchBar.swift */,
+				BF050944214B5F3600A905BB /* CutomSearchController.swift */,
 			);
 			path = CustomSearchDemo;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 		BFD15329213391680089B0B0 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				BF923E1B2153679100534F29 /* CoolNavi.swift */,
 				BF642A98211AD89300A32D50 /* 咕咚APP截图操作.pdf */,
 				FC2DA0142101CA8A00BAAD9A /* PersonViewController.swift */,
 				BF8C94682118139E001CC587 /* PersonalTableViewCell.swift */,
@@ -458,6 +467,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
 				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
@@ -468,6 +478,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
@@ -499,6 +510,7 @@
 				BFD1534321366B430089B0B0 /* DataObject.swift in Sources */,
 				FCCF028A2112F39E00CF9E85 /* BarChartsViewController.swift in Sources */,
 				FCCF028B2112F39E00CF9E85 /* PublicParamter.swift in Sources */,
+				BF050943214B5E9800A905BB /* CustomSearchBar.swift in Sources */,
 				BF09CA0C21463E52008F5EB5 /* CustomSearchViewController.swift in Sources */,
 				BF90913B213CDC690053A795 /* LeftCodeViewController.swift in Sources */,
 				FCCF028C2112F39E00CF9E85 /* ChartsTabViewController.swift in Sources */,
@@ -508,11 +520,13 @@
 				BF686534213E686C0002B966 /* LeftTreeView.swift in Sources */,
 				BFD1533F213648480089B0B0 /* LeftTreeViewController.swift in Sources */,
 				FB7453FC2147BD240057D810 /* CollectionHeaderView.swift in Sources */,
+				BF050945214B5F3600A905BB /* CutomSearchController.swift in Sources */,
 				FC8CF18821002FB10059CA72 /* FrameViewController.swift in Sources */,
 				FC2DA0132101CA7300BAAD9A /* IdeaViewController.swift in Sources */,
 				FB2C8C62210960F200E4EA65 /* BaseViewController.swift in Sources */,
 				FB7453FF2147BD240057D810 /* UITableViewControllerCellTwo.swift in Sources */,
 				BF8D0F46212A4CE5006631C2 /* ChangePasswordViewController.swift in Sources */,
+				BF923E1C2153679100534F29 /* CoolNavi.swift in Sources */,
 				FC81C89E20FED8FB00CF8252 /* ViewController.swift in Sources */,
 				FC81C89C20FED8FB00CF8252 /* AppDelegate.swift in Sources */,
 				FB7453FB2147BD240057D810 /* CollectionFootView.swift in Sources */,
@@ -704,6 +718,16 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaAsyncSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Neon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RATreeView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+				);
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -729,6 +753,16 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5GVSBZG2D3;
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaAsyncSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Neon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RATreeView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+				);
 				INFOPLIST_FILE = XinaoEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

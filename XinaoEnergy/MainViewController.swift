@@ -183,7 +183,7 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
         
         minX = topView?.center.x//滑动view中心点 -->隐藏时中心点
         maxX = minX! + topMake.width//彻底展示时的中心点 -->显示时的中心点
-        midX = (maxX!-minX!)/2 + minX!//0，显示一半时，左侧view中心点位置
+        midX = (topView?.frame.width)!*3/10//数据区域一半的位置
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         topView?.addGestureRecognizer(panGesture)
     }
@@ -204,15 +204,18 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
             
         case UIGestureRecognizerState.began:
             print("----began----")
-            start = pan.translation(in: self.view)//手指移动的实时点
+            start = pan.translation(in: self.topView)//手指移动的起始点
             
         case UIGestureRecognizerState.changed:
             //            print("----Changed----")
-            let tran = pan.translation(in: self.view)//手指移动的实时点
-            //tran.x向右为正，向左为负
+            let tran = pan.translation(in: self.topView)//手指移动的实时点
+            //新的中心点
             let newC = (topView?.center.x)! + tran.x
+            
+            //moveX向右为正，向左为负
             let moveX = tran.x - (start?.x)!
             let moveY = tran.y - (start?.y)!
+            
             //保证view随着手指移动移动
             if fabs(moveX) > fabs(moveY){
                 move = true
@@ -222,9 +225,9 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
             }else{
                 move = false
             }
-            pan.setTranslation(CGPoint.zero, in: self.view)
+            pan.setTranslation(CGPoint.zero, in: self.topView)
         case UIGestureRecognizerState.ended:
-            if move == true {
+//            if move == true {
                 UIView.animate(withDuration: 0.2, animations: { () -> Void in
                     if self.topView!.center.x > self.minX! && self.topView!.center.x < self.midX!{//展示的view不超过view一半宽度时
                         self.topView!.center = CGPoint(x: self.minX!, y: self.topView!.center.y)
@@ -234,7 +237,7 @@ class MainViewController: UIViewController,UIPageViewControllerDelegate,UIPageVi
                 }, completion: { (finish) -> Void in
                     
                 })
-            }
+//            }
         default: break
         }
         

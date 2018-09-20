@@ -8,74 +8,86 @@
 
 import UIKit
 
+let kWindowHeight: CGFloat = 205.0
+
 class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate {
     
-    var headerView:UIView!
+    var headerView: CoolNavi?
     var personalTable:UITableView!
     var tableCellModels :[NSArray] = NSMutableArray() as! [NSArray]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.isHidden = true
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         // Do any additional setup after loading the view.
-        creteHeaderView()
-        createTableView()
+        createCollNav()
+        
     }
-    
+    func createCollNav(){
+        createTableView()
+        headerView = CoolNavi()
+        headerView!.myInit(CGRect(x: 0,y: 0,width: self.view.frame.size.width,height: kWindowHeight), backImageName: "Background", headerImageURL: "http://d.hiphotos.baidu.com/image/pic/item/0ff41bd5ad6eddc4f263b0fc3adbb6fd52663334.jpg", title: "妹子!", subTitle: "个性签名, 啦啦啦!")
+        headerView?.scrollView = personalTable
+        headerView?.initWithClosure({ () -> Void in
+            print("headerImageAction")
+        })
+        self.view.addSubview(headerView!)
+    }
     func creteHeaderView(){
-        headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 180))
-        //会拉伸图片覆盖
-        let image = UIImage(imageLiteralResourceName: "Background")
-        headerView.layer.contents = image.cgImage
-        
-        //由于图片较小，覆盖时有问题
-//        headerView.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
-//        headerView.contentMode = .scaleAspectFill
-//        headerView.autoresizingMask = .flexibleWidth
-//        headerView.clipsToBounds = true
-        
-        let headerImageView:UIImageView!
-        headerImageView = UIImageView.init(frame: CGRect(x: self.view.frame.size.width * 0.5 - 70*0.5, y: 30, width: 70, height: 70))
-//        headerImageView.center.x = self.view.center.x
-//        headerImageView.center.y = 75
-//        headerImageView.frame.size = CGSize(width: 50, height: 50)
-        // 圆角指定为长度一半
-        headerImageView?.layer.cornerRadius = (headerImageView?.frame.width)! / 2
-        // image还需要加上这一句, 不然无效
-        headerImageView?.layer.masksToBounds = true
-        /*
-         通过下面方法1来加载图片时，图片会一直缓存在内存中，一般情况不推荐使用这种方式，
-         一个是缓存不可控；第二个图片资源得直接加载到项目中，不方便管理，而且每次添加新图片时工程文件都会变动。
-         
-         通过方法2来加载图片时，每次都会从硬盘里读图片，这个操作是比较耗时的，文章开头处的两篇文章都是以这个方法来加载图片的。
-         */
-        headerImageView.image = UIImage(named: "Group 17 Copy")
-//        headerImageView.image = UIImage(contentsOfFile: "Group 17 Copy")
-        headerView.addSubview(headerImageView)
-        
-        let personName:UILabel = UILabel.init(frame: CGRect(x: 0, y: 115, width: kScreenWidth, height: 20))
-        personName.center.x = headerView.center.x
-        personName.textColor = UIColor.white
-        personName.textAlignment = .center
-        personName.font = UIFont.systemFont(ofSize: 16)
-        personName.text = "admin"
-//        personName.adjustsFontSizeToFitWidth = true
-        headerView.addSubview(personName)
-        
-        let personPosition:UILabel = UILabel.init(frame: CGRect(x: 0, y: 140, width: kScreenWidth, height: 20))
-        personPosition.center.x = headerView.center.x
-        personPosition.textColor = UIColor.white
-        personPosition.textAlignment = .center
-        personPosition.font = UIFont.systemFont(ofSize: 14)
-        personPosition.text = "开发工程师"
-        //        personName.adjustsFontSizeToFitWidth = true
-        headerView.addSubview(personPosition)
-        
-        self.view.addSubview(headerView)
+//        headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 180))
+//        //会拉伸图片覆盖
+//        let image = UIImage(imageLiteralResourceName: "Background")
+//        headerView.layer.contents = image.cgImage
+//
+//        //由于图片较小，覆盖时有问题
+////        headerView.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+////        headerView.contentMode = .scaleAspectFill
+////        headerView.autoresizingMask = .flexibleWidth
+////        headerView.clipsToBounds = true
+//
+//        let headerImageView:UIImageView!
+//        headerImageView = UIImageView.init(frame: CGRect(x: self.view.frame.size.width * 0.5 - 70*0.5, y: 30, width: 70, height: 70))
+////        headerImageView.center.x = self.view.center.x
+////        headerImageView.center.y = 75
+////        headerImageView.frame.size = CGSize(width: 50, height: 50)
+//        // 圆角指定为长度一半
+//        headerImageView?.layer.cornerRadius = (headerImageView?.frame.width)! / 2
+//        // image还需要加上这一句, 不然无效
+//        headerImageView?.layer.masksToBounds = true
+//        /*
+//         通过下面方法1来加载图片时，图片会一直缓存在内存中，一般情况不推荐使用这种方式，
+//         一个是缓存不可控；第二个图片资源得直接加载到项目中，不方便管理，而且每次添加新图片时工程文件都会变动。
+//
+//         通过方法2来加载图片时，每次都会从硬盘里读图片，这个操作是比较耗时的，文章开头处的两篇文章都是以这个方法来加载图片的。
+//         */
+//        headerImageView.image = UIImage(named: "Group 17 Copy")
+////        headerImageView.image = UIImage(contentsOfFile: "Group 17 Copy")
+//        headerView.addSubview(headerImageView)
+//
+//        let personName:UILabel = UILabel.init(frame: CGRect(x: 0, y: 115, width: kScreenWidth, height: 20))
+//        personName.center.x = headerView.center.x
+//        personName.textColor = UIColor.white
+//        personName.textAlignment = .center
+//        personName.font = UIFont.systemFont(ofSize: 16)
+//        personName.text = "admin"
+////        personName.adjustsFontSizeToFitWidth = true
+//        headerView.addSubview(personName)
+//
+//        let personPosition:UILabel = UILabel.init(frame: CGRect(x: 0, y: 140, width: kScreenWidth, height: 20))
+//        personPosition.center.x = headerView.center.x
+//        personPosition.textColor = UIColor.white
+//        personPosition.textAlignment = .center
+//        personPosition.font = UIFont.systemFont(ofSize: 14)
+//        personPosition.text = "开发工程师"
+//        //        personName.adjustsFontSizeToFitWidth = true
+//        headerView.addSubview(personPosition)
+//
+//        self.view.addSubview(headerView)
     }
     
     func createTableView () {
-        personalTable = UITableView.init(frame: CGRect(x: 0, y: 180, width: kScreenWidth, height: kScreenHeight-180), style: UITableViewStyle.grouped)
+        personalTable = UITableView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: UITableViewStyle.grouped)
         
         personalTable.delegate = self
         personalTable.dataSource = self

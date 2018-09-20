@@ -16,4 +16,5 @@ target 'XinaoEnergy' do
   pod 'CocoaAsyncSocket'
   pod 'MBProgressHUD', '~>1.1.0'
   pod 'RATreeView'
+  pod 'Kingfisher'
 end

@@ -9,7 +9,8 @@
 import UIKit
 
 class CustomSearchViewController: UISearchController {
-
+    var hasCancel:Bool = false
+    let deViceSysetmVersion = UIDevice.current.systemVersion as NSString
     
     lazy var hasFindCancelBtn: Bool = {
         return false
@@ -36,20 +37,22 @@ class CustomSearchViewController: UISearchController {
     }
     
     func setup() {
-//        searchBar.barTintColor = UIColor.red
-        
-        // 搜索框
-        searchBar.barStyle = .default
-//        self.searchBar.sizeToFit()
-//        searchBar.tintColor = kLXFSearchTintColor
-        // 去除上下两条横线
-//        searchBar.setBackgroundImage(kSectionColor.trans2Image(), for: .any, barMetrics: .default)
-        // 右侧语音
-        searchBar.showsBookmarkButton = true
-//        searchBar.setImage(#imageLiteral(resourceName: "Group 32@3x.png"), for: .bookmark, state: .normal)
-        
-        searchBar.delegate = self
-        
+        self.dimsBackgroundDuringPresentation = false
+        self.hidesNavigationBarDuringPresentation = true
+        self.searchBar.frame = CGRect(x: 0, y: 0, width: kScreenWidth-40, height: 44)
+        self.searchBar.barStyle = .default
+//        self.searchBar.backgroundColor = .red
+//        self.searchBar.barTintColor = .white
+        self.searchBar.delegate = self
+        self.searchBar.autocapitalizationType = .none
+        self.searchBar.placeholder = "搜索"
+//        self.searchBar.layer.borderColor = UIColor.blue.cgColor
+        self.searchBar.contentMode = .center
+//        self.searchBar.layer.borderWidth = 1
+        self.searchBar.layer.masksToBounds = true
+        if deViceSysetmVersion.floatValue >= 11.0 {
+            searchBar.setPositionAdjustment(UIOffsetMake((searchBar.frame.size.width - 40.5 - 50 ) / 2 , 0), for: UISearchBarIcon.search)
+        }
     }
     
     @objc func findCancel() {
@@ -71,6 +74,42 @@ class CustomSearchViewController: UISearchController {
         // 设置状态栏颜色
         UIApplication.shared.statusBarStyle = .default
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        var frame = self.searchBar.frame
+        frame.size.height = 44
+        
+        frame.size.width = kScreenWidth-40
+        self.searchBar.frame = frame
+        if deViceSysetmVersion.floatValue >= 11 {
+            searchBar.setPositionAdjustment(UIOffsetMake((searchBar.frame.size.width - 40.5 - 50 ) / 2 , 0), for: UISearchBarIcon.search)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        var searchBarTextField:UITextField?
+//        if deViceSysetmVersion.floatValue > 10.0 {
+//            searchBarTextField = ((self.searchBar.subviews.first?.subviews)! as NSArray).object(at: 1) as? UITextField
+//        } else {
+//            searchBarTextField = self.searchBar.subviews.first?.subviews.last as? UITextField
+//        }
+        
+        // 去除边黑边
+        self.searchBar.layer.borderColor = UIColor.white.cgColor
+//        self.searchBar.tintColor = UIColor.red
+        self.searchBar.layer.borderWidth = 1
+        self.searchBar.layer.masksToBounds = true
+        //由于是打开页面时调用，只写着一种
+        var frame = self.searchBar.frame
+        frame.size.height = 44
+        frame.size.width = kScreenWidth
+        self.searchBar.frame = frame
+        if deViceSysetmVersion.floatValue >= 11 {
+            self.searchBar.setPositionAdjustment(UIOffset.zero, for: UISearchBarIcon.search)
+        }
+    }
 }
 extension CustomSearchViewController: UISearchControllerDelegate {
     func didPresentSearchController(_ searchController: UISearchController) {
@@ -81,11 +120,25 @@ extension CustomSearchViewController: UISearchControllerDelegate {
 extension CustomSearchViewController: UISearchBarDelegate {
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
 //        LXFLog("点击了语音按钮")
+        hasCancel = false
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+        hasCancel = false
+    }
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+//        if deViceSysetmVersion.floatValue >= 11 {
+//            self.searchBar.setPositionAdjustment(UIOffset.zero, for: UISearchBarIcon.search)
+//        }
+        return true
+    }
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+//        if deViceSysetmVersion.floatValue >= 11 {
+//            searchBar.setPositionAdjustment(UIOffsetMake((self.searchBar.frame.size.width - 40.5 - 50 ) / 2 , 0), for: UISearchBarIcon.search)
+//        }
+        return true
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        hasCancel = true
 //        if !hasFindCancelBtn {
 //            link.add(to: RunLoop.current, forMode: .commonModes)
 //        }
@@ -96,3 +149,7 @@ extension CustomSearchViewController: UISearchResultsUpdating {
         searchController.searchResultsController?.view.isHidden = false
     }
 }
+
+// 计算placeholder、icon、icon和placeholder间距的总宽度
+
+

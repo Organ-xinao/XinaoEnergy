@@ -12,6 +12,8 @@ class SingleStationViewController: UIViewController, UICollectionViewDelegate, U
     var collectionView:UICollectionView!
     var customTab = LeftTreeView()
     var searchController:CustomSearchViewController!
+    var customSearchController:CustomSearchController!
+    var searchView:UIView!
 //    var searchBar:UISearchBar!
     var shouldShowSearchResults = false //是否显示搜索结果
     
@@ -21,25 +23,51 @@ class SingleStationViewController: UIViewController, UICollectionViewDelegate, U
         createSearchBar()
         setTab()
         layoutCollectionView()
-        // Do any additional setup after loading the view.
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
+
+    override func viewDidLayoutSubviews () {
+        
+//        let deViceSysetmVersion = UIDevice.current.systemVersion as NSString
+//        var searchBarTextField:UITextField?
+//        if deViceSysetmVersion.floatValue > 10.0 {
+//            searchBarTextField = ((searchController.searchBar.subviews.first?.subviews)! as NSArray).object(at: 1) as? UITextField
+//        } else {
+//            searchBarTextField = searchController.searchBar.subviews.first?.subviews.last as? UITextField
+//        }
+//
+//        if shouldShowSearchResults == true{
+//            searchController.searchBar.frame = CGRect(x: 0, y: -20, width: kScreenWidth, height: 44)
+//            searchBarTextField?.tintColor = UIColor.red
+//            searchBarTextField?.frame = CGRect(x: (searchBarTextField?.frame.origin.x)!, y: (searchBarTextField?.frame.origin.y)!, width: kScreenWidth, height: 44)
+//        }else{
+//            searchController.searchBar.frame = CGRect(x: 0, y: 20, width: kScreenWidth-40, height: 44)
+//            searchBarTextField?.tintColor = UIColor.red
+//            searchBarTextField?.frame = CGRect(x: (searchBarTextField?.frame.origin.x)!, y: (searchBarTextField?.frame.origin.y)!, width: kScreenWidth-40, height: 44)
+//        }
+//        print(searchController.searchBar.subviews.first?.subviews)
+        
     }
     
     func createSearchBar(){
         // 创建searchResultVC
-        let searchResultVC = CustomSearchViewController()
-        // 设置背景颜色为红色
-//        searchResultVC.view.backgroundColor = UIColor.red
-        let resultNav = UINavigationController(rootViewController: searchResultVC)
-        //通过参数searchResultsController传nil来初始化UISearchController，意思是我们告诉search controller我们会用相同的视图控制器来展示我们的搜索结果，如果我们想要指定一个不同的view controller，那就会被替代为显示搜索结果。
+//        let searchResultVC = CustomSearchViewController()
+//        // 设置背景颜色为红色
+////        searchResultVC.view.backgroundColor = UIColor.red
+//        let resultNav = UINavigationController(rootViewController: searchResultVC)
+//        //通过参数searchResultsController传nil来初始化UISearchController，意思是我们告诉search controller我们会用相同的视图控制器来展示我们的搜索结果，如果我们想要指定一个不同的view controller，那就会被替代为显示搜索结果。
         searchController = CustomSearchViewController(searchResultsController: nil)
         
         // 设置背景颜色
         searchController.view.backgroundColor = UIColor (red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
-        let searchView = UIView.init(frame: CGRect(x: 0, y: CGFloat(KMaskHeight), width: kScreenWidth, height: searchController.searchBar.frame.height))
         
-        searchController.searchBar.barStyle = UIBarStyle.default
-        //设置searchBar自适应大小
-        searchController.searchBar.sizeToFit()
+        searchView = UIView.init(frame: CGRect(x: 0, y: 20, width: kScreenWidth, height: searchController.searchBar.frame.height))
+        searchView.backgroundColor = UIColor(red: 37/255, green: 46/255, blue: 71/255, alpha: 1.0)
+        let rightBtn = UIButton.init(frame: CGRect(x: kScreenWidth-35, y: 9.5, width: 25, height: 25))
+        rightBtn.setImage(UIImage(named: "扫描"), for: UIControlState.normal)
+        rightBtn.tintColor = UIColor(red: 130/255, green: 197/255, blue: 255/255, alpha: 1)
+        rightBtn.addTarget(self, action: #selector(openCamera), for: UIControlEvents.touchUpInside)
+        searchView.addSubview(rightBtn)
         self.view.addSubview(searchView)
         searchView.addSubview(searchController.searchBar)
         
@@ -56,14 +84,14 @@ class SingleStationViewController: UIViewController, UICollectionViewDelegate, U
         //设置definesPresentationContext为true，我们保证在UISearchController在激活状态下用户push到下一个view controller之后search bar不会仍留在界面上。
         self.definesPresentationContext = true
         
-        //设置默认显示内容
-        searchController.searchBar.placeholder = "Search here..."
-        
-        
+    }
+    
+    @objc func openCamera () {
+        print("打开相机")
     }
     //TabView
     func  setTab(){
-        customTab.frame = CGRect(x: 0, y: CGFloat(KMaskHeight)+searchController.searchBar.frame.height, width: kScreenWidth/3, height: kScreenHeight-49-CGFloat(KMaskHeight)+searchController.searchBar.frame.height)
+        customTab.frame = CGRect(x: 0, y: CGFloat(KMaskHeight), width: kScreenWidth/3, height: kScreenHeight-49-CGFloat(KMaskHeight))
         customTab.backgroundColor = UIColor.white
         self.view.addSubview(customTab)
         for i in 0...10{
@@ -99,7 +127,7 @@ class SingleStationViewController: UIViewController, UICollectionViewDelegate, U
 //        layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 0, right: 10)
         // 设置分区头视图和尾视图宽高
 //        layout.headerReferenceSize = CGSize.init(width: kScreenWidth, height: 30)
-        collectionView = UICollectionView(frame: CGRect(x: kScreenWidth/3, y: CGFloat(KMaskHeight)+searchController.searchBar.frame.height, width: kScreenWidth/3*2, height: kScreenHeight-49-CGFloat(KMaskHeight)-searchController.searchBar.frame.height), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: kScreenWidth/3, y: CGFloat(KMaskHeight), width: kScreenWidth/3*2, height: kScreenHeight-49-CGFloat(KMaskHeight)), collectionViewLayout: layout)
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -219,6 +247,8 @@ extension SingleStationViewController:UISearchBarDelegate, UISearchResultsUpdati
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         shouldShowSearchResults = false
 //        tableView.reloadData()
+//        searchView.frame = CGRect(x: 0, y: 20, width: kScreenWidth-40, height: searchController.searchBar.frame.height)
+        
     }
     
     //点击搜索按钮，触发该代理方法，如果已经显示搜索结果，那么直接去除键盘，否则刷新列表
